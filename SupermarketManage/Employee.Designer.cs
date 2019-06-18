@@ -181,6 +181,7 @@
             this.txtOK.Size = new System.Drawing.Size(74, 29);
             this.txtOK.Tag = "6";
             this.txtOK.Text = "查找";
+            this.txtOK.Click += new System.EventHandler(this.txtOK_Click);
             // 
             // labK
             // 
@@ -211,7 +212,7 @@
             // txtEmployeeID
             // 
             this.txtEmployeeID.Location = new System.Drawing.Point(123, 72);
-            this.txtEmployeeID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmployeeID.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmployeeID.Name = "txtEmployeeID";
             this.txtEmployeeID.Size = new System.Drawing.Size(169, 28);
             this.txtEmployeeID.TabIndex = 7;
@@ -219,7 +220,7 @@
             // txtEmployeeName
             // 
             this.txtEmployeeName.Location = new System.Drawing.Point(438, 72);
-            this.txtEmployeeName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmployeeName.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmployeeName.Name = "txtEmployeeName";
             this.txtEmployeeName.Size = new System.Drawing.Size(169, 28);
             this.txtEmployeeName.TabIndex = 9;
@@ -251,7 +252,7 @@
             "男",
             "女"});
             this.cboSex.Location = new System.Drawing.Point(123, 136);
-            this.cboSex.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboSex.Margin = new System.Windows.Forms.Padding(4);
             this.cboSex.Name = "cboSex";
             this.cboSex.Size = new System.Drawing.Size(169, 26);
             this.cboSex.TabIndex = 15;
@@ -269,7 +270,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(438, 134);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(169, 28);
             this.dateTimePicker1.TabIndex = 17;
@@ -281,7 +282,7 @@
             "经理",
             "员工"});
             this.cmbEmployeePost.Location = new System.Drawing.Point(124, 256);
-            this.cmbEmployeePost.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbEmployeePost.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEmployeePost.Name = "cmbEmployeePost";
             this.cmbEmployeePost.Size = new System.Drawing.Size(169, 26);
             this.cmbEmployeePost.TabIndex = 29;
@@ -293,7 +294,7 @@
             "电子",
             "食品部"});
             this.cmbEmployeeDepartment.Location = new System.Drawing.Point(438, 256);
-            this.cmbEmployeeDepartment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbEmployeeDepartment.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEmployeeDepartment.Name = "cmbEmployeeDepartment";
             this.cmbEmployeeDepartment.Size = new System.Drawing.Size(169, 26);
             this.cmbEmployeeDepartment.TabIndex = 28;
@@ -321,7 +322,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(438, 194);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(169, 28);
             this.txtEmail.TabIndex = 33;
@@ -339,7 +340,7 @@
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(123, 194);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(169, 28);
             this.txtPhone.TabIndex = 31;
@@ -357,7 +358,7 @@
             // txtEmployeeAddress
             // 
             this.txtEmployeeAddress.Location = new System.Drawing.Point(741, 72);
-            this.txtEmployeeAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmployeeAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmployeeAddress.MaxLength = 180;
             this.txtEmployeeAddress.Multiline = true;
             this.txtEmployeeAddress.Name = "txtEmployeeAddress";
@@ -378,7 +379,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(36, 320);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
@@ -411,7 +412,7 @@
             this.Controls.Add(this.txtEmployeeID);
             this.Controls.Add(this.lblEmployeeID);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Employee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "员工信息";

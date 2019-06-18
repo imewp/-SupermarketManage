@@ -97,13 +97,14 @@
             // 员工信息ToolStripMenuItem
             // 
             this.员工信息ToolStripMenuItem.Name = "员工信息ToolStripMenuItem";
-            this.员工信息ToolStripMenuItem.Size = new System.Drawing.Size(182, 30);
+            this.员工信息ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.员工信息ToolStripMenuItem.Text = "员工信息";
+            this.员工信息ToolStripMenuItem.Click += new System.EventHandler(this.员工信息ToolStripMenuItem_Click);
             // 
             // 供应商信息ToolStripMenuItem
             // 
             this.供应商信息ToolStripMenuItem.Name = "供应商信息ToolStripMenuItem";
-            this.供应商信息ToolStripMenuItem.Size = new System.Drawing.Size(182, 30);
+            this.供应商信息ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.供应商信息ToolStripMenuItem.Text = "供应商信息";
             // 
             // 进货管理ToolStripMenuItem
@@ -240,7 +241,7 @@
             // 直接退出系统ToolStripMenuItem
             // 
             this.直接退出系统ToolStripMenuItem.Name = "直接退出系统ToolStripMenuItem";
-            this.直接退出系统ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.直接退出系统ToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
             this.直接退出系统ToolStripMenuItem.Text = "直接退出系统";
             this.直接退出系统ToolStripMenuItem.Click += new System.EventHandler(this.直接退出系统ToolStripMenuItem_Click);
             // 
@@ -283,7 +284,7 @@
             // 
             // tsSupermarket
             // 
-            this.tsSupermarket.ImageScalingSize = new System.Drawing.Size(50, 50);
+            this.tsSupermarket.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.tsSupermarket.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbtnCheckIn,
             this.tsbtnBookRoom,

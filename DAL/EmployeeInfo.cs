@@ -57,7 +57,7 @@ namespace DAL
         public bool Update(Model.EmployeeInfo model)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("update EmployeeID set ");
+            strSql.Append("update EmployeeInfo set ");
             strSql.Append("EmployeeName=@EmployeeName,");
             strSql.Append("Sex=@Sex,");
             strSql.Append("EmployeeBirthday=@EmployeeBirthday,");
@@ -107,7 +107,7 @@ namespace DAL
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select EmployeeID,EmployeeName,Sex,EmployeeBirthday,EmployeeDepartment,EmployeePost,EmployeePhone,EmployeeEmail,EmployeeAddress,EmployeeFlag ");
+            strSql.Append("select EmployeeID as 员工编号,EmployeeName as 员工姓名,Sex as 性别,EmployeeBirthday as 出生日期,EmployeeDepartment as 所属部门,EmployeePost as 部门职位,EmployeePhone 联系电话,EmployeeEmail as 电子邮箱,EmployeeAddress 家庭住址");
             strSql.Append(" FROM EmployeeInfo ");
             if (strWhere.Trim() != "")
             {

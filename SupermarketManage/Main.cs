@@ -62,7 +62,16 @@ namespace SupermarketManage
         private void tsbtnCheckIn_Click(object sender, EventArgs e)
         {
             Employee employee = new Employee();
+            employee.MdiParent = this;
             employee.Show();
+        }
+
+        private void 员工信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Employee employee = new Employee();
+            employee.MdiParent = this;
+            employee.Show();
+            
         }
     }
 }

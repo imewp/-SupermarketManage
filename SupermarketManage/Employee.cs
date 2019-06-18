@@ -16,7 +16,7 @@ namespace SupermarketManage
             InitializeComponent();
         }
         
-        int flag = 0;//标记   //1.添加  2.修改 3.删除
+        int flag = 0;//标记   //1.添加  2.修改 3.删除 
         private void toolAdd_Click(object sender, EventArgs e)
         {
             ClearControls();
@@ -77,42 +77,27 @@ namespace SupermarketManage
             switch(flag)
             {
                 case 0: { 
-                
+                            
                         } break;
                 case 1:  {
                             if (bll.Add(model))//将员工信息添加到数据库中，根据返回值判断是否添加成功
                             {
-                                MessageBox.Show("数据添加成功");
                                 DataBind();//窗体登录时绑定数据到DataGridView
                                 ControlStatus();
-                            }
-                            else
-                            {
-                                MessageBox.Show("数据添加失败");
                             }
                         } break;
                 case 2: {
                              if (bll.Update(model))//根据返回布尔值判断是否修改数据成功
                             {
-                                MessageBox.Show("数据修改成功");
                                 DataBind();//窗体登录时绑定数据到DataGridView
                                 ControlStatus();
-                            }
-                            else
-                            {
-                                MessageBox.Show("数据修改失败");
                             }
                         } break;
                 case 3: {
                             if (bll.Delete(model))//根据返回布尔值判断是否删除数据成功
                             {
-                                MessageBox.Show("数据删除成功");
                                 DataBind();//窗体登录时绑定数据到DataGridView
                                 ControlStatus();
-                            }
-                            else
-                            {
-                                MessageBox.Show("数据删除失败");
                             }
                         } break;
             }
@@ -121,6 +106,7 @@ namespace SupermarketManage
         private void toolAmend_Click(object sender, EventArgs e)
         {
             ControlStatus();
+            txtEmployeeID.ReadOnly = true;
             flag = 2;
         }
 
@@ -128,6 +114,7 @@ namespace SupermarketManage
         {
             ClearControls();
             ControlStatus();
+            txtEmployeeID.ReadOnly = false;
         }
 
         private void toolExit_Click(object sender, EventArgs e)
@@ -161,6 +148,53 @@ namespace SupermarketManage
                 txtEmail.Text = dataGridView1.CurrentCell.OwningRow.Cells[7].Value.ToString();
                 txtEmployeeAddress.Text = dataGridView1.CurrentCell.OwningRow.Cells[8].Value.ToString();
             }
+        }
+
+        private void txtOK_Click(object sender, EventArgs e)
+        {
+            string strSelect = this.cbxCondition.Text.Trim();
+            if (strSelect == "")
+            {
+                MessageBox.Show("请选择查询条件！");
+                return;
+            }
+            if (this.txtKeyWord.Text == "")
+            {
+                MessageBox.Show("输入查询条件！");
+                return;
+            }
+            string strWhere = "1=1";
+            string employeeName = txtKeyWord.Text;
+            string sex = txtKeyWord.Text;
+            string employeeDepartment = txtKeyWord.Text;
+            string employeePost = txtKeyWord.Text;
+            switch(strSelect)
+            {
+                case "员工姓名":
+                    {
+                        strWhere = strWhere + " and EmployeeName like '" + employeeName + "'";
+                    }
+                    break;
+                case "员工性别":
+                    {
+                        strWhere = strWhere + " and Sex = '" + sex + "'";
+                    }
+                    break;
+                case "所属部门":
+                    {
+                        strWhere = strWhere + " and EmployeeDepartment like '" + employeeDepartment + "'";
+                    }
+                    break;
+                case "员工职位":
+                    {
+                        strWhere = strWhere + " and EmployeePost like '" + employeePost + "'";
+                    }
+                    break;
+            }
+            BLL.Employee bll = new BLL.Employee(); //实例化BLL层          
+            DataSet ds = new DataSet();
+            ds = bll.GetList(strWhere);//执行带参数SQL语句，将结果存在ds中
+            dataGridView1.DataSource = ds.Tables[0];//将ds中的表作为DataGridView的数据源
         }
 
      
