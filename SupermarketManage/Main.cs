@@ -20,16 +20,5 @@ namespace SupermarketManage
         {
             Application.Exit();
         }
-
-      
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-            timer1.Enabled = true;
-        }
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            this.tsStatuslblTime.Text = "当前时间：" + DateTime.Now.ToString();
-        }
     }
 }

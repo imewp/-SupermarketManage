@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BLL
+namespace Model
 {
-    public class Class1
+    class THGoodsInfo
     {
     }
 }
