@@ -46,13 +46,18 @@
             this.系统维护ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.数据备份ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.数据还原ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.主题ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.主题一ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.主题二ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.主题三ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.主题四ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.辅助工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.登录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.启动WordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.启动ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.计算器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.直接退出系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.直接退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statuslblUser = new System.Windows.Forms.ToolStripStatusLabel();
@@ -78,6 +83,7 @@
             this.销售管理ToolStripMenuItem,
             this.库存管理ToolStripMenuItem,
             this.系统维护ToolStripMenuItem,
+            this.主题ToolStripMenuItem,
             this.辅助工具ToolStripMenuItem,
             this.退出ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -202,6 +208,45 @@
             this.数据还原ToolStripMenuItem.Size = new System.Drawing.Size(164, 30);
             this.数据还原ToolStripMenuItem.Text = "数据还原";
             // 
+            // 主题ToolStripMenuItem
+            // 
+            this.主题ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.主题一ToolStripMenuItem,
+            this.主题二ToolStripMenuItem,
+            this.主题三ToolStripMenuItem,
+            this.主题四ToolStripMenuItem});
+            this.主题ToolStripMenuItem.Name = "主题ToolStripMenuItem";
+            this.主题ToolStripMenuItem.Size = new System.Drawing.Size(94, 28);
+            this.主题ToolStripMenuItem.Text = "主题切换";
+            // 
+            // 主题一ToolStripMenuItem
+            // 
+            this.主题一ToolStripMenuItem.Name = "主题一ToolStripMenuItem";
+            this.主题一ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.主题一ToolStripMenuItem.Text = "主题一";
+            this.主题一ToolStripMenuItem.Click += new System.EventHandler(this.主题一ToolStripMenuItem_Click);
+            // 
+            // 主题二ToolStripMenuItem
+            // 
+            this.主题二ToolStripMenuItem.Name = "主题二ToolStripMenuItem";
+            this.主题二ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.主题二ToolStripMenuItem.Text = "主题二";
+            this.主题二ToolStripMenuItem.Click += new System.EventHandler(this.主题二ToolStripMenuItem_Click);
+            // 
+            // 主题三ToolStripMenuItem
+            // 
+            this.主题三ToolStripMenuItem.Name = "主题三ToolStripMenuItem";
+            this.主题三ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.主题三ToolStripMenuItem.Text = "主题三";
+            this.主题三ToolStripMenuItem.Click += new System.EventHandler(this.主题三ToolStripMenuItem_Click);
+            // 
+            // 主题四ToolStripMenuItem
+            // 
+            this.主题四ToolStripMenuItem.Name = "主题四ToolStripMenuItem";
+            this.主题四ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.主题四ToolStripMenuItem.Text = "主题四";
+            this.主题四ToolStripMenuItem.Click += new System.EventHandler(this.主题四ToolStripMenuItem_Click);
+            // 
             // 辅助工具ToolStripMenuItem
             // 
             this.辅助工具ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -216,45 +261,45 @@
             // 登录ToolStripMenuItem
             // 
             this.登录ToolStripMenuItem.Name = "登录ToolStripMenuItem";
-            this.登录ToolStripMenuItem.Size = new System.Drawing.Size(196, 30);
+            this.登录ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.登录ToolStripMenuItem.Text = "登录Internet";
             this.登录ToolStripMenuItem.Click += new System.EventHandler(this.登录ToolStripMenuItem_Click);
             // 
             // 启动WordToolStripMenuItem
             // 
             this.启动WordToolStripMenuItem.Name = "启动WordToolStripMenuItem";
-            this.启动WordToolStripMenuItem.Size = new System.Drawing.Size(196, 30);
+            this.启动WordToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.启动WordToolStripMenuItem.Text = "启动Word";
             this.启动WordToolStripMenuItem.Click += new System.EventHandler(this.启动WordToolStripMenuItem_Click);
             // 
             // 启动ToolStripMenuItem
             // 
             this.启动ToolStripMenuItem.Name = "启动ToolStripMenuItem";
-            this.启动ToolStripMenuItem.Size = new System.Drawing.Size(196, 30);
+            this.启动ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.启动ToolStripMenuItem.Text = "启动Excel";
             this.启动ToolStripMenuItem.Click += new System.EventHandler(this.启动ToolStripMenuItem_Click);
             // 
             // 计算器ToolStripMenuItem
             // 
             this.计算器ToolStripMenuItem.Name = "计算器ToolStripMenuItem";
-            this.计算器ToolStripMenuItem.Size = new System.Drawing.Size(196, 30);
+            this.计算器ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.计算器ToolStripMenuItem.Text = "计算器";
             this.计算器ToolStripMenuItem.Click += new System.EventHandler(this.计算器ToolStripMenuItem_Click);
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.直接退出系统ToolStripMenuItem});
+            this.直接退出ToolStripMenuItem});
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
             this.退出ToolStripMenuItem.Size = new System.Drawing.Size(80, 28);
             this.退出ToolStripMenuItem.Text = "退出(&T)";
             // 
-            // 直接退出系统ToolStripMenuItem
+            // 直接退出ToolStripMenuItem
             // 
-            this.直接退出系统ToolStripMenuItem.Name = "直接退出系统ToolStripMenuItem";
-            this.直接退出系统ToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
-            this.直接退出系统ToolStripMenuItem.Text = "直接退出系统";
-            this.直接退出系统ToolStripMenuItem.Click += new System.EventHandler(this.直接退出系统ToolStripMenuItem_Click);
+            this.直接退出ToolStripMenuItem.Name = "直接退出ToolStripMenuItem";
+            this.直接退出ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.直接退出ToolStripMenuItem.Text = "直接退出";
+            this.直接退出ToolStripMenuItem.Click += new System.EventHandler(this.直接退出ToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -413,7 +458,6 @@
         private System.Windows.Forms.ToolStripMenuItem 启动ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 计算器ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 直接退出系统ToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel statuslblUser;
@@ -426,6 +470,12 @@
         private System.Windows.Forms.ToolStripButton tsbtnRoomSearch;
         private System.Windows.Forms.ToolStripButton tsbtnUser;
         private System.Windows.Forms.ToolStripMenuItem 用户管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 主题ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 主题一ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 主题二ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 主题三ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 主题四ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 直接退出ToolStripMenuItem;
     }
 }
 

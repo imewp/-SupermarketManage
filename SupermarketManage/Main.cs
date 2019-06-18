@@ -15,6 +15,8 @@ namespace SupermarketManage
         {
             InitializeComponent();
         }
+        //定义新皮肤
+        Sunisoft.IrisSkin.SkinEngine skin = new Sunisoft.IrisSkin.SkinEngine();
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -29,6 +31,8 @@ namespace SupermarketManage
         private void Main_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
+            //选择皮肤文件
+            skin.SkinFile = System.Environment.CurrentDirectory + "\\Skins\\" + "DiamondBlue.ssk";
         }
 
         private void 启动WordToolStripMenuItem_Click(object sender, EventArgs e)
@@ -54,10 +58,6 @@ namespace SupermarketManage
             System.Diagnostics.Process.Start("calc.exe");
         }
 
-        private void 直接退出系统ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void tsbtnCheckIn_Click(object sender, EventArgs e)
         {
@@ -118,6 +118,44 @@ namespace SupermarketManage
                 jh.MdiParent = this;
                 jh.Show();
             }
+        }
+
+        private void 主题一ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //选择皮肤文件
+            skin.SkinFile = System.Environment.CurrentDirectory + "\\Skins\\" + "DiamondBlue.ssk";
+            skin.SkinDialogs = false;
+            skin.Active = true;
+        }
+
+        private void 主题二ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //选择皮肤文件
+            skin.SkinFile = System.Environment.CurrentDirectory + "\\Skins\\" + "DiamondOlive.ssk";
+            skin.SkinDialogs = false;
+            skin.Active = true;
+        }
+
+        private void 主题三ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //选择皮肤文件
+            skin.SkinFile = System.Environment.CurrentDirectory + "\\Skins\\" + "DiamondPurple.ssk";
+            skin.SkinDialogs = false;
+            skin.Active = true;
+        }
+
+        private void 主题四ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //选择皮肤文件
+            skin.SkinFile = System.Environment.CurrentDirectory + "\\Skins\\" + "DiamondRed.ssk";
+            skin.SkinDialogs = false;
+            skin.Active = true;
+        }
+
+        private void 直接退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //退出-直接退出
+            Application.Exit();
         }
     }
 }
