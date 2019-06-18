@@ -90,5 +90,19 @@ namespace DAL
         {
             return DAL.DBHelper.SelectToDS("Pro_UserSelectAll", CommandType.StoredProcedure);
         }
+        /// <summary>
+        /// 获得数据列表
+        /// </summary>
+        public DataSet GetList(string strWhere)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select UserName as 用户账号,UserPassword as 账号密码,UserType as 用户类别");
+            strSql.Append(" FROM UserInfo ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
+            return DBHelper.SelectToDS(strSql.ToString(), CommandType.Text);
+        }
     }
 }

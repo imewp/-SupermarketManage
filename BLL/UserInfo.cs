@@ -49,6 +49,13 @@ namespace BLL
         /// <summary>
         /// 获得数据列表
         /// </summary>
+        public DataSet GetList(string strWhere)
+        {
+            return dal.GetList(strWhere);
+        }
+        /// <summary>
+        /// 获得数据列表
+        /// </summary>
         /// <returns></returns>
         public DataSet GetList()
         {
