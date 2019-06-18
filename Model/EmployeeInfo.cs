@@ -9,10 +9,8 @@ namespace Model
     {
         string employeeID;
         string employeeName;
-        string userName;
-        string userPassword;
         string sex;
-        string employeeBirthday;
+        DateTime employeeBirthday;
         string employeeDepartment;
         string employeePost;
         string employeePhone;
@@ -31,22 +29,12 @@ namespace Model
             set { employeeName = value; }
         }
 
-        public string UserName
-        {
-            get { return userName; }
-            set { userName = value; }
-        }
-        public string UserPassword
-        {
-            get { return userPassword; }
-            set { userPassword = value; }
-        }
         public string Sex
         {
             get { return sex; }
             set { sex = value; }
         }
-        public string EmployeeBirthday
+        public DateTime EmployeeBirthday
         {
             get { return employeeBirthday; }
             set { employeeBirthday = value; }
