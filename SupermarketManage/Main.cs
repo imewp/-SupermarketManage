@@ -58,5 +58,11 @@ namespace SupermarketManage
         {
             Application.Exit();
         }
+
+        private void tsbtnCheckIn_Click(object sender, EventArgs e)
+        {
+            Employee employee = new Employee();
+            employee.Show();
+        }
     }
 }

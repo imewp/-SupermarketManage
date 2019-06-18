@@ -12,10 +12,13 @@ namespace Model
         string userName;
         string userPassword;
         string sex;
-        int employeeBirthday;
+        string employeeBirthday;
         string employeeDepartment;
         string employeePost;
         string employeePhone;
+        string employeeEmail;
+        string employeeAddress;
+        int employFalg;
 
         public string EmployeeID
         {
@@ -43,7 +46,7 @@ namespace Model
             get { return sex; }
             set { sex = value; }
         }
-        public int EmployeeBirthday
+        public string EmployeeBirthday
         {
             get { return employeeBirthday; }
             set { employeeBirthday = value; }
@@ -62,6 +65,21 @@ namespace Model
         {
             get { return employeePhone; }
             set { employeePhone = value; }
+        }
+        public string EmployeeEmail
+        {
+            get { return employeeEmail; }
+            set { employeeEmail = value; }
+        }
+        public string EmployeeAddress
+        {
+            get { return employeeAddress; }
+            set { employeeAddress = value; }
+        }
+        public int EmployFalg
+        {
+            get { return employFalg; }
+            set { employFalg = value; }
         }
     }
 }
