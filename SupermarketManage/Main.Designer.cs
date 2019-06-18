@@ -106,6 +106,7 @@
             this.供应商信息ToolStripMenuItem.Name = "供应商信息ToolStripMenuItem";
             this.供应商信息ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.供应商信息ToolStripMenuItem.Text = "供应商信息";
+            this.供应商信息ToolStripMenuItem.Click += new System.EventHandler(this.供应商信息ToolStripMenuItem_Click);
             // 
             // 进货管理ToolStripMenuItem
             // 
@@ -182,13 +183,13 @@
             // 数据备份ToolStripMenuItem
             // 
             this.数据备份ToolStripMenuItem.Name = "数据备份ToolStripMenuItem";
-            this.数据备份ToolStripMenuItem.Size = new System.Drawing.Size(164, 30);
+            this.数据备份ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.数据备份ToolStripMenuItem.Text = "数据备份";
             // 
             // 数据还原ToolStripMenuItem
             // 
             this.数据还原ToolStripMenuItem.Name = "数据还原ToolStripMenuItem";
-            this.数据还原ToolStripMenuItem.Size = new System.Drawing.Size(164, 30);
+            this.数据还原ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.数据还原ToolStripMenuItem.Text = "数据还原";
             // 
             // 辅助工具ToolStripMenuItem
@@ -363,6 +364,7 @@
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "超市进销存管理系统";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.menuStrip1.ResumeLayout(false);

@@ -73,5 +73,12 @@ namespace SupermarketManage
             employee.Show();
             
         }
+
+        private void 供应商信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Company company = new Company();
+            company.MdiParent = this;
+            company.Show();
+        }
     }
 }
