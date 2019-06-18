@@ -61,17 +61,45 @@ namespace SupermarketManage
 
         private void tsbtnCheckIn_Click(object sender, EventArgs e)
         {
-            Employee employee = new Employee();
-            employee.MdiParent = this;
-            employee.Show();
+            if (this.MdiChildren.Length == 0)
+            {
+                Employee employee = new Employee();
+                employee.MdiParent = this;
+                employee.Show();
+            }
+            else
+            {
+                MessageBox.Show("请关闭当前子窗体");
+            }
         }
 
         private void 员工信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Employee employee = new Employee();
-            employee.MdiParent = this;
-            employee.Show();
+            if (this.MdiChildren.Length == 0)
+            {
+                Employee employee = new Employee();
+                employee.MdiParent = this;
+                employee.Show();
+            }
+            else
+            {
+                MessageBox.Show("请关闭当前子窗体");
+            }
             
+        }
+
+        private void 用户管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.MdiChildren.Length == 0)
+            {
+                UserManage um = new UserManage();
+                um.MdiParent = this;
+                um.Show();
+            }
+            else
+            {
+                MessageBox.Show("请关闭当前子窗体");
+            }
         }
     }
 }

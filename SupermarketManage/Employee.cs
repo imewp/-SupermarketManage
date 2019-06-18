@@ -63,6 +63,11 @@ namespace SupermarketManage
 
         private void toolSave_Click(object sender, EventArgs e)
         {
+            if (txtEmployeeID.Text == "" || txtEmployeeName.Text == "" || txtEmail.Text == "" || txtEmployeeAddress.Text == "" ||txtKeyWord.Text == "" || txtOK.Text == "" || txtPhone.Text == "")
+            {
+                MessageBox.Show("请将信息添加完整！");
+                return;
+            }
             Model.EmployeeInfo model = new Model.EmployeeInfo();//实例化model层
             model.EmployeeID = txtEmployeeID.Text.Trim();
             model.EmployeeName = txtEmployeeName.Text.Trim();
@@ -119,7 +124,7 @@ namespace SupermarketManage
 
         private void toolExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
         public void DataBind()//定义一个函数用于绑定数据到DataGridView
         {
