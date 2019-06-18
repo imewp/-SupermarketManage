@@ -63,11 +63,11 @@
             this.lblAddress = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeDepot = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmployeeSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmployeePhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeDepot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -379,11 +379,11 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EmployeeID,
-            this.EmployeeDepot,
             this.EmployeeName,
             this.EmployeeSex,
-            this.EmployeeDepartment,
-            this.EmployeePhone});
+            this.EmployeePhone,
+            this.EmployeeDepot,
+            this.EmployeeDepartment});
             this.dataGridView1.Location = new System.Drawing.Point(36, 319);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
@@ -397,11 +397,6 @@
             this.EmployeeID.HeaderText = "员工编号";
             this.EmployeeID.Name = "EmployeeID";
             // 
-            // EmployeeDepot
-            // 
-            this.EmployeeDepot.HeaderText = "员工职位";
-            this.EmployeeDepot.Name = "EmployeeDepot";
-            // 
             // EmployeeName
             // 
             this.EmployeeName.HeaderText = "员工姓名";
@@ -412,15 +407,20 @@
             this.EmployeeSex.HeaderText = "性别";
             this.EmployeeSex.Name = "EmployeeSex";
             // 
-            // EmployeeDepartment
-            // 
-            this.EmployeeDepartment.HeaderText = "所属部门";
-            this.EmployeeDepartment.Name = "EmployeeDepartment";
-            // 
             // EmployeePhone
             // 
             this.EmployeePhone.HeaderText = "手机号";
             this.EmployeePhone.Name = "EmployeePhone";
+            // 
+            // EmployeeDepot
+            // 
+            this.EmployeeDepot.HeaderText = "员工职位";
+            this.EmployeeDepot.Name = "EmployeeDepot";
+            // 
+            // EmployeeDepartment
+            // 
+            this.EmployeeDepartment.HeaderText = "所属部门";
+            this.EmployeeDepartment.Name = "EmployeeDepartment";
             // 
             // Employee
             // 
@@ -495,11 +495,11 @@
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeDepot;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeSex;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeDepartment;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeePhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeDepot;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeDepartment;
 
     }
 }
