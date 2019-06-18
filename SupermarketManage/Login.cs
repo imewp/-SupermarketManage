@@ -16,7 +16,7 @@ namespace SupermarketManage
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click_1(object sender, EventArgs e)
         {
             Model.UserInfo model = new Model.UserInfo();//实例化Model层
             model.UserName = txtUserName.Text.Trim();

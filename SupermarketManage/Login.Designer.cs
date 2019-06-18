@@ -28,73 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblUserName = new System.Windows.Forms.Label();
-            this.txtUserName = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.lblPassword = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.btnLogin = new System.Windows.Forms.Button();
+            this.txtPassword = new SupermarketManage.TransTextBox();
+            this.txtUserName = new SupermarketManage.TransTextBox();
             this.SuspendLayout();
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(51, 75);
-            this.lblUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(53, 12);
-            this.lblUserName.TabIndex = 0;
-            this.lblUserName.Text = "用户名：";
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.Location = new System.Drawing.Point(97, 73);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(123, 21);
-            this.txtUserName.TabIndex = 1;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(97, 111);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(123, 21);
-            this.txtPassword.TabIndex = 3;
-            // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(51, 113);
-            this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(53, 12);
-            this.lblPassword.TabIndex = 2;
-            this.lblPassword.Text = "密  码：";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(107, 153);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.Font = new System.Drawing.Font("黑体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnLogin.ForeColor = System.Drawing.Color.Black;
+            this.btnLogin.Location = new System.Drawing.Point(463, 284);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(72, 27);
-            this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = "登录";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Size = new System.Drawing.Size(306, 49);
+            this.btnLogin.TabIndex = 2;
+            this.btnLogin.Text = "登 录";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtPassword.Location = new System.Drawing.Point(503, 207);
+            this.txtPassword.Multiline = true;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(242, 45);
+            this.txtPassword.TabIndex = 1;
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUserName.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtUserName.Location = new System.Drawing.Point(503, 141);
+            this.txtUserName.Multiline = true;
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(242, 45);
+            this.txtUserName.TabIndex = 0;
             // 
             // Login
             // 
-            this.AcceptButton = this.btnLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(286, 229);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(893, 500);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtUserName);
-            this.Controls.Add(this.lblUserName);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "登录";
@@ -105,10 +88,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.TextBox txtUserName;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label lblPassword;
+        private TransTextBox txtUserName;
+        private TransTextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
+
     }
 }
