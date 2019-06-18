@@ -7,5 +7,73 @@ namespace Model
 {
     class JHGoodsInfo
     {
+        string goodsID;
+        string employeeID;
+        string companyName;
+        string depotName;
+        string goodsName;
+        int goodsNum;
+        string goodsUnit;
+        float  goodsJHPrice;
+        float  goodsSellPrice;
+        float  goodsNeedPay;
+        float  goodsHasPay;
+
+        public string GoodsID
+        {
+            get { return goodsID;}
+            set { goodsID = value;}
+        }
+        public string EmployeeID
+        {
+            get { return employeeID ; }
+            set {employeeID  = value; }
+        }
+        public string CompanyName
+        {
+            get { return companyName ; }
+            set { companyName = value; }
+        }
+        public string DepotName
+        {
+            get { return depotName ; }
+            set { depotName = value; }
+        }
+        public string GoodsName
+        {
+            get { return goodsName ; }
+            set { goodsName = value; }
+        }
+        public int GoodsNum
+        {
+            get { return goodsNum ; }
+            set { goodsNum = value; }
+        }
+        public string GoodUnit
+        {
+            get { return goodsUnit ; }
+            set { goodsUnit = value; }
+        }
+        public float GoodsJHPrice
+        {
+            get { return goodsJHPrice;}
+            set { goodsJHPrice = value;}
+        }
+        public float GoodsSellPrice
+        {
+            get { return goodsSellPrice;}
+            set { goodsSellPrice = value;}
+        }
+        public float GoodsNeedPay
+        {
+            get { return goodsNeedPay;}
+            set { goodsNeedPay  = value; }
+        }
+        public float GoodsHasPay
+        {
+            get { return goodsHasPay;}
+            set { goodsHasPay = value;}
+        }
+
     }
 }
