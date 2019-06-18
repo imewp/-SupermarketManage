@@ -34,7 +34,7 @@
             this.toolCancel = new System.Windows.Forms.ToolStripButton();
             this.toolAdd = new System.Windows.Forms.ToolStripButton();
             this.toolAmend = new System.Windows.Forms.ToolStripButton();
-            this.tollDelete = new System.Windows.Forms.ToolStripButton();
+            this.toolDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolExit = new System.Windows.Forms.ToolStripButton();
             this.txtGoodsID = new System.Windows.Forms.TextBox();
@@ -59,8 +59,10 @@
             this.lblGoodsTime = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lblGoodsRemark = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtRemarks = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtEmployeeID = new System.Windows.Forms.TextBox();
+            this.lblEmployeeID = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +75,7 @@
             this.toolCancel,
             this.toolAdd,
             this.toolAmend,
-            this.tollDelete,
+            this.toolDelete,
             this.toolStripSeparator2,
             this.toolExit});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -92,6 +94,7 @@
             this.toolSave.Size = new System.Drawing.Size(74, 28);
             this.toolSave.Tag = "1";
             this.toolSave.Text = "保存";
+            this.toolSave.Click += new System.EventHandler(this.toolSave_Click);
             // 
             // toolCancel
             // 
@@ -102,6 +105,7 @@
             this.toolCancel.Size = new System.Drawing.Size(74, 28);
             this.toolCancel.Tag = "2";
             this.toolCancel.Text = "取消";
+            this.toolCancel.Click += new System.EventHandler(this.toolCancel_Click);
             // 
             // toolAdd
             // 
@@ -111,6 +115,7 @@
             this.toolAdd.Size = new System.Drawing.Size(74, 28);
             this.toolAdd.Tag = "3";
             this.toolAdd.Text = "添加";
+            this.toolAdd.Click += new System.EventHandler(this.toolAdd_Click);
             // 
             // toolAmend
             // 
@@ -120,13 +125,15 @@
             this.toolAmend.Size = new System.Drawing.Size(74, 28);
             this.toolAmend.Tag = "4";
             this.toolAmend.Text = "修改";
+            this.toolAmend.Click += new System.EventHandler(this.toolAmend_Click);
             // 
-            // tollDelete
+            // toolDelete
             // 
-            this.tollDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tollDelete.Name = "tollDelete";
-            this.tollDelete.Size = new System.Drawing.Size(50, 28);
-            this.tollDelete.Text = "删除";
+            this.toolDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolDelete.Name = "toolDelete";
+            this.toolDelete.Size = new System.Drawing.Size(50, 28);
+            this.toolDelete.Text = "删除";
+            this.toolDelete.Click += new System.EventHandler(this.toolDelete_Click);
             // 
             // toolStripSeparator2
             // 
@@ -141,6 +148,7 @@
             this.toolExit.Size = new System.Drawing.Size(74, 28);
             this.toolExit.Tag = "7";
             this.toolExit.Text = "退出";
+            this.toolExit.Click += new System.EventHandler(this.toolExit_Click);
             // 
             // txtGoodsID
             // 
@@ -212,6 +220,7 @@
             this.txtGoodsNum.Name = "txtGoodsNum";
             this.txtGoodsNum.Size = new System.Drawing.Size(123, 28);
             this.txtGoodsNum.TabIndex = 61;
+            this.txtGoodsNum.Text = "0";
             // 
             // lblGoodsNum
             // 
@@ -242,6 +251,7 @@
             this.txtGoodsJHPrice.Name = "txtGoodsJHPrice";
             this.txtGoodsJHPrice.Size = new System.Drawing.Size(190, 28);
             this.txtGoodsJHPrice.TabIndex = 64;
+            this.txtGoodsJHPrice.Text = "0";
             // 
             // lblGoodsJHPrice
             // 
@@ -274,6 +284,7 @@
             this.txtGoodsNeedPrice.Name = "txtGoodsNeedPrice";
             this.txtGoodsNeedPrice.Size = new System.Drawing.Size(190, 28);
             this.txtGoodsNeedPrice.TabIndex = 68;
+            this.txtGoodsNeedPrice.Text = "0";
             // 
             // lblGoodsNeedPrice
             // 
@@ -290,6 +301,7 @@
             this.txtGoodsHasPay.Name = "txtGoodsHasPay";
             this.txtGoodsHasPay.Size = new System.Drawing.Size(190, 28);
             this.txtGoodsHasPay.TabIndex = 70;
+            this.txtGoodsHasPay.Text = "0";
             // 
             // lblGoodsHasPay
             // 
@@ -319,19 +331,19 @@
             // lblGoodsRemark
             // 
             this.lblGoodsRemark.AutoSize = true;
-            this.lblGoodsRemark.Location = new System.Drawing.Point(649, 60);
+            this.lblGoodsRemark.Location = new System.Drawing.Point(663, 107);
             this.lblGoodsRemark.Name = "lblGoodsRemark";
             this.lblGoodsRemark.Size = new System.Drawing.Size(62, 18);
             this.lblGoodsRemark.TabIndex = 73;
             this.lblGoodsRemark.Text = "备注：";
             // 
-            // textBox1
+            // txtRemarks
             // 
-            this.textBox1.Location = new System.Drawing.Point(702, 57);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(223, 213);
-            this.textBox1.TabIndex = 74;
+            this.txtRemarks.Location = new System.Drawing.Point(731, 104);
+            this.txtRemarks.Multiline = true;
+            this.txtRemarks.Name = "txtRemarks";
+            this.txtRemarks.Size = new System.Drawing.Size(194, 163);
+            this.txtRemarks.TabIndex = 74;
             // 
             // dataGridView1
             // 
@@ -343,14 +355,33 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(883, 225);
             this.dataGridView1.TabIndex = 75;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // txtEmployeeID
+            // 
+            this.txtEmployeeID.Location = new System.Drawing.Point(731, 57);
+            this.txtEmployeeID.Name = "txtEmployeeID";
+            this.txtEmployeeID.Size = new System.Drawing.Size(190, 28);
+            this.txtEmployeeID.TabIndex = 77;
+            // 
+            // lblEmployeeID
+            // 
+            this.lblEmployeeID.AutoSize = true;
+            this.lblEmployeeID.Location = new System.Drawing.Point(646, 60);
+            this.lblEmployeeID.Name = "lblEmployeeID";
+            this.lblEmployeeID.Size = new System.Drawing.Size(98, 18);
+            this.lblEmployeeID.TabIndex = 76;
+            this.lblEmployeeID.Text = "进货员工：";
             // 
             // JHGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(971, 569);
+            this.Controls.Add(this.txtEmployeeID);
+            this.Controls.Add(this.lblEmployeeID);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtRemarks);
             this.Controls.Add(this.lblGoodsRemark);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lblGoodsTime);
@@ -377,6 +408,7 @@
             this.Name = "JHGoods";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "商品进货信息";
+            this.Load += new System.EventHandler(this.JHGoods_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -392,7 +424,7 @@
         private System.Windows.Forms.ToolStripButton toolCancel;
         private System.Windows.Forms.ToolStripButton toolAdd;
         private System.Windows.Forms.ToolStripButton toolAmend;
-        private System.Windows.Forms.ToolStripButton tollDelete;
+        private System.Windows.Forms.ToolStripButton toolDelete;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolExit;
         private System.Windows.Forms.TextBox txtGoodsID;
@@ -417,7 +449,9 @@
         private System.Windows.Forms.Label lblGoodsTime;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lblGoodsRemark;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtRemarks;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtEmployeeID;
+        private System.Windows.Forms.Label lblEmployeeID;
     }
 }

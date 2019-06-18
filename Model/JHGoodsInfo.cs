@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Model
 {
-    class JHGoodsInfo
+    public class JHGoodsInfo
     {
         string goodsID;
         string employeeID;
@@ -18,6 +18,9 @@ namespace Model
         float  goodsSellPrice;
         float  goodsNeedPay;
         float  goodsHasPay;
+        string goodsRemark;
+        DateTime goodsTime;
+        int flag;
 
         public string GoodsID
         {
@@ -49,7 +52,7 @@ namespace Model
             get { return goodsNum ; }
             set { goodsNum = value; }
         }
-        public string GoodUnit
+        public string GoodsUnit
         {
             get { return goodsUnit ; }
             set { goodsUnit = value; }
@@ -74,6 +77,20 @@ namespace Model
             get { return goodsHasPay;}
             set { goodsHasPay = value;}
         }
-
+        public string GoodsRemark
+        {
+            get { return goodsRemark; }
+            set { goodsRemark = value; }
+        }
+        public DateTime GoodsTime
+        {
+            get { return goodsTime; }
+            set { goodsTime = value; }
+        }
+        public int Flag
+        {
+            get { return flag; }
+            set { flag = value; }
+        }
     }
 }
