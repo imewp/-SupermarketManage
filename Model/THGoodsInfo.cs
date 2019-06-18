@@ -7,5 +7,6 @@ namespace Model
 {
     class THGoodsInfo
     {
+
     }
 }
