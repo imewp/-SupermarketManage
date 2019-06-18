@@ -9,7 +9,7 @@ namespace DAL
 {
     public class EmployeeInfo
     {
-           /// <summary>
+         /// <summary>
         /// 增加一条数据
         /// </summary>
         public bool Add(Model.EmployeeInfo model)

@@ -56,7 +56,7 @@ namespace SupermarketManage
         private void btnUpdate_Click(object sender, EventArgs e)//修改
         {
             ControlStatus();
-            txtEmployeeID.ReadOnly = true;
+            txtUserName.ReadOnly = true;
             flag = 2;
         }
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)//点击dataGridView2将数据同步在txetbox中
@@ -132,7 +132,7 @@ namespace SupermarketManage
         {
             ClearControls();
             ControlStatus();
-            txtEmployeeID.ReadOnly = false;
+            txtUserName.ReadOnly = false;
         }
 
         private void toolExit_Click(object sender, EventArgs e)
@@ -173,11 +173,6 @@ namespace SupermarketManage
             DataSet ds = new DataSet();
             ds = bll.GetList(strWhere);//执行带参数SQL语句，将结果存在ds中
             dataGridView2.DataSource = ds.Tables[0];//将ds中的表作为DataGridView的数据源
-        }
-
-        private void cbxCondition_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

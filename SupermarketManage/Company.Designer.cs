@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Company));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolSave = new System.Windows.Forms.ToolStripButton();
+            this.toolCancel = new System.Windows.Forms.ToolStripButton();
+            this.toolAdd = new System.Windows.Forms.ToolStripButton();
+            this.toolAmend = new System.Windows.Forms.ToolStripButton();
+            this.toolDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.labCondation = new System.Windows.Forms.ToolStripLabel();
             this.cbxCondition = new System.Windows.Forms.ToolStripComboBox();
             this.txtKeyWord = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolSave = new System.Windows.Forms.ToolStripButton();
-            this.toolCancel = new System.Windows.Forms.ToolStripButton();
-            this.toolAdd = new System.Windows.Forms.ToolStripButton();
-            this.toolAmend = new System.Windows.Forms.ToolStripButton();
-            this.toolrefesh = new System.Windows.Forms.ToolStripButton();
             this.txtOK = new System.Windows.Forms.ToolStripButton();
             this.toolExit = new System.Windows.Forms.ToolStripButton();
             this.lblCompanyID = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@
             this.toolCancel,
             this.toolAdd,
             this.toolAmend,
-            this.toolrefesh,
+            this.toolDelete,
             this.toolStripSeparator1,
             this.labCondation,
             this.cbxCondition,
@@ -84,6 +84,58 @@
             this.toolStrip1.Size = new System.Drawing.Size(1058, 32);
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolSave
+            // 
+            this.toolSave.Enabled = false;
+            this.toolSave.Image = ((System.Drawing.Image)(resources.GetObject("toolSave.Image")));
+            this.toolSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolSave.Name = "toolSave";
+            this.toolSave.Size = new System.Drawing.Size(74, 28);
+            this.toolSave.Tag = "1";
+            this.toolSave.Text = "保存";
+            this.toolSave.Click += new System.EventHandler(this.toolSave_Click);
+            // 
+            // toolCancel
+            // 
+            this.toolCancel.Enabled = false;
+            this.toolCancel.Image = ((System.Drawing.Image)(resources.GetObject("toolCancel.Image")));
+            this.toolCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolCancel.Name = "toolCancel";
+            this.toolCancel.Size = new System.Drawing.Size(74, 28);
+            this.toolCancel.Tag = "2";
+            this.toolCancel.Text = "取消";
+            this.toolCancel.Click += new System.EventHandler(this.toolCancel_Click);
+            // 
+            // toolAdd
+            // 
+            this.toolAdd.Image = ((System.Drawing.Image)(resources.GetObject("toolAdd.Image")));
+            this.toolAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolAdd.Name = "toolAdd";
+            this.toolAdd.Size = new System.Drawing.Size(74, 28);
+            this.toolAdd.Tag = "3";
+            this.toolAdd.Text = "添加";
+            this.toolAdd.Click += new System.EventHandler(this.toolAdd_Click);
+            // 
+            // toolAmend
+            // 
+            this.toolAmend.Image = ((System.Drawing.Image)(resources.GetObject("toolAmend.Image")));
+            this.toolAmend.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolAmend.Name = "toolAmend";
+            this.toolAmend.Size = new System.Drawing.Size(74, 28);
+            this.toolAmend.Tag = "4";
+            this.toolAmend.Text = "修改";
+            this.toolAmend.Click += new System.EventHandler(this.toolAmend_Click);
+            // 
+            // toolDelete
+            // 
+            this.toolDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.SplitButton;
+            this.toolDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolDelete.Image")));
+            this.toolDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolDelete.Name = "toolDelete";
+            this.toolDelete.Size = new System.Drawing.Size(74, 28);
+            this.toolDelete.Text = "删除";
+            this.toolDelete.Click += new System.EventHandler(this.toolDelete_Click);
             // 
             // toolStripSeparator1
             // 
@@ -114,52 +166,6 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
             // 
-            // toolSave
-            // 
-            this.toolSave.Enabled = false;
-            this.toolSave.Image = ((System.Drawing.Image)(resources.GetObject("toolSave.Image")));
-            this.toolSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolSave.Name = "toolSave";
-            this.toolSave.Size = new System.Drawing.Size(74, 28);
-            this.toolSave.Tag = "1";
-            this.toolSave.Text = "保存";
-            // 
-            // toolCancel
-            // 
-            this.toolCancel.Enabled = false;
-            this.toolCancel.Image = ((System.Drawing.Image)(resources.GetObject("toolCancel.Image")));
-            this.toolCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolCancel.Name = "toolCancel";
-            this.toolCancel.Size = new System.Drawing.Size(74, 28);
-            this.toolCancel.Tag = "2";
-            this.toolCancel.Text = "取消";
-            // 
-            // toolAdd
-            // 
-            this.toolAdd.Image = ((System.Drawing.Image)(resources.GetObject("toolAdd.Image")));
-            this.toolAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolAdd.Name = "toolAdd";
-            this.toolAdd.Size = new System.Drawing.Size(74, 28);
-            this.toolAdd.Tag = "3";
-            this.toolAdd.Text = "添加";
-            // 
-            // toolAmend
-            // 
-            this.toolAmend.Image = ((System.Drawing.Image)(resources.GetObject("toolAmend.Image")));
-            this.toolAmend.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolAmend.Name = "toolAmend";
-            this.toolAmend.Size = new System.Drawing.Size(74, 28);
-            this.toolAmend.Tag = "4";
-            this.toolAmend.Text = "修改";
-            // 
-            // toolrefesh
-            // 
-            this.toolrefesh.Image = ((System.Drawing.Image)(resources.GetObject("toolrefesh.Image")));
-            this.toolrefesh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolrefesh.Name = "toolrefesh";
-            this.toolrefesh.Size = new System.Drawing.Size(74, 28);
-            this.toolrefesh.Text = "删除";
-            // 
             // txtOK
             // 
             this.txtOK.Image = ((System.Drawing.Image)(resources.GetObject("txtOK.Image")));
@@ -168,6 +174,7 @@
             this.txtOK.Size = new System.Drawing.Size(74, 28);
             this.txtOK.Tag = "6";
             this.txtOK.Text = "查找";
+            this.txtOK.Click += new System.EventHandler(this.txtOK_Click);
             // 
             // toolExit
             // 
@@ -177,6 +184,7 @@
             this.toolExit.Size = new System.Drawing.Size(74, 28);
             this.toolExit.Tag = "7";
             this.toolExit.Text = "退出";
+            this.toolExit.Click += new System.EventHandler(this.toolExit_Click);
             // 
             // lblCompanyID
             // 
@@ -301,6 +309,7 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(930, 179);
             this.dataGridView1.TabIndex = 23;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Company
             // 
@@ -326,6 +335,7 @@
             this.Name = "Company";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "供应商信息";
+            this.Load += new System.EventHandler(this.Company_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -341,7 +351,7 @@
         private System.Windows.Forms.ToolStripButton toolCancel;
         private System.Windows.Forms.ToolStripButton toolAdd;
         private System.Windows.Forms.ToolStripButton toolAmend;
-        private System.Windows.Forms.ToolStripButton toolrefesh;
+        private System.Windows.Forms.ToolStripButton toolDelete;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel labCondation;
         private System.Windows.Forms.ToolStripComboBox cbxCondition;

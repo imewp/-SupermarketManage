@@ -67,10 +67,6 @@ namespace SupermarketManage
                 employee.MdiParent = this;
                 employee.Show();
             }
-            else
-            {
-                MessageBox.Show("请关闭当前子窗体");
-            }
         }
 
         private void 员工信息ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -80,10 +76,6 @@ namespace SupermarketManage
                 Employee employee = new Employee();
                 employee.MdiParent = this;
                 employee.Show();
-            }
-            else
-            {
-                MessageBox.Show("请关闭当前子窗体");
             }
             
         }
@@ -96,9 +88,35 @@ namespace SupermarketManage
                 um.MdiParent = this;
                 um.Show();
             }
-            else
+        }
+
+        private void 供应商信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.MdiChildren.Length == 0)
             {
-                MessageBox.Show("请关闭当前子窗体");
+                Company c = new Company();
+                c.MdiParent = this;
+                c.Show();
+            }
+        }
+
+        private void 商品进货ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.MdiChildren.Length == 0)
+            {
+                JHGoods jh = new JHGoods();
+                jh.MdiParent = this;
+                jh.Show();
+            }
+        }
+
+        private void tsbtnBookRoom_Click(object sender, EventArgs e)
+        {
+            if (this.MdiChildren.Length == 0)
+            {
+                JHGoods jh = new JHGoods();
+                jh.MdiParent = this;
+                jh.Show();
             }
         }
     }

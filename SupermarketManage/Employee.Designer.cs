@@ -85,7 +85,8 @@
             this.toolExit});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(718, 31);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.toolStrip1.Size = new System.Drawing.Size(1077, 32);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -95,7 +96,7 @@
             this.toolSave.Image = ((System.Drawing.Image)(resources.GetObject("toolSave.Image")));
             this.toolSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolSave.Name = "toolSave";
-            this.toolSave.Size = new System.Drawing.Size(60, 28);
+            this.toolSave.Size = new System.Drawing.Size(74, 29);
             this.toolSave.Tag = "1";
             this.toolSave.Text = "保存";
             this.toolSave.Click += new System.EventHandler(this.toolSave_Click);
@@ -106,7 +107,7 @@
             this.toolCancel.Image = ((System.Drawing.Image)(resources.GetObject("toolCancel.Image")));
             this.toolCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolCancel.Name = "toolCancel";
-            this.toolCancel.Size = new System.Drawing.Size(60, 28);
+            this.toolCancel.Size = new System.Drawing.Size(74, 29);
             this.toolCancel.Tag = "2";
             this.toolCancel.Text = "取消";
             this.toolCancel.Click += new System.EventHandler(this.toolCancel_Click);
@@ -116,7 +117,7 @@
             this.toolAdd.Image = ((System.Drawing.Image)(resources.GetObject("toolAdd.Image")));
             this.toolAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolAdd.Name = "toolAdd";
-            this.toolAdd.Size = new System.Drawing.Size(60, 28);
+            this.toolAdd.Size = new System.Drawing.Size(74, 29);
             this.toolAdd.Tag = "3";
             this.toolAdd.Text = "添加";
             this.toolAdd.Click += new System.EventHandler(this.toolAdd_Click);
@@ -126,7 +127,7 @@
             this.toolAmend.Image = ((System.Drawing.Image)(resources.GetObject("toolAmend.Image")));
             this.toolAmend.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolAmend.Name = "toolAmend";
-            this.toolAmend.Size = new System.Drawing.Size(60, 28);
+            this.toolAmend.Size = new System.Drawing.Size(74, 29);
             this.toolAmend.Tag = "4";
             this.toolAmend.Text = "修改";
             this.toolAmend.Click += new System.EventHandler(this.toolAmend_Click);
@@ -136,7 +137,7 @@
             this.toolDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolDelete.Image")));
             this.toolDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolDelete.Name = "toolDelete";
-            this.toolDelete.Size = new System.Drawing.Size(60, 28);
+            this.toolDelete.Size = new System.Drawing.Size(74, 29);
             this.toolDelete.Text = "删除";
             this.toolDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolDelete.Click += new System.EventHandler(this.toolDelete_Click);
@@ -144,12 +145,12 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 32);
             // 
             // labCondation
             // 
             this.labCondation.Name = "labCondation";
-            this.labCondation.Size = new System.Drawing.Size(59, 28);
+            this.labCondation.Size = new System.Drawing.Size(86, 29);
             this.labCondation.Text = "查询条件:";
             // 
             // cbxCondition
@@ -160,24 +161,24 @@
             "所属部门",
             "员工职位"});
             this.cbxCondition.Name = "cbxCondition";
-            this.cbxCondition.Size = new System.Drawing.Size(75, 31);
+            this.cbxCondition.Size = new System.Drawing.Size(110, 32);
             // 
             // txtKeyWord
             // 
             this.txtKeyWord.Name = "txtKeyWord";
-            this.txtKeyWord.Size = new System.Drawing.Size(68, 31);
+            this.txtKeyWord.Size = new System.Drawing.Size(100, 32);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 32);
             // 
             // txtOK
             // 
             this.txtOK.Image = ((System.Drawing.Image)(resources.GetObject("txtOK.Image")));
             this.txtOK.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.txtOK.Name = "txtOK";
-            this.txtOK.Size = new System.Drawing.Size(60, 28);
+            this.txtOK.Size = new System.Drawing.Size(74, 29);
             this.txtOK.Tag = "6";
             this.txtOK.Text = "查找";
             this.txtOK.Click += new System.EventHandler(this.txtOK_Click);
@@ -185,7 +186,7 @@
             // labK
             // 
             this.labK.Name = "labK";
-            this.labK.Size = new System.Drawing.Size(24, 28);
+            this.labK.Size = new System.Drawing.Size(30, 29);
             this.labK.Text = "    ";
             // 
             // toolExit
@@ -193,7 +194,7 @@
             this.toolExit.Image = ((System.Drawing.Image)(resources.GetObject("toolExit.Image")));
             this.toolExit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolExit.Name = "toolExit";
-            this.toolExit.Size = new System.Drawing.Size(60, 28);
+            this.toolExit.Size = new System.Drawing.Size(74, 29);
             this.toolExit.Tag = "7";
             this.toolExit.Text = "退出";
             this.toolExit.Click += new System.EventHandler(this.toolExit_Click);
@@ -201,41 +202,46 @@
             // lblEmployeeID
             // 
             this.lblEmployeeID.AutoSize = true;
-            this.lblEmployeeID.Location = new System.Drawing.Point(22, 51);
+            this.lblEmployeeID.Location = new System.Drawing.Point(33, 76);
+            this.lblEmployeeID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmployeeID.Name = "lblEmployeeID";
-            this.lblEmployeeID.Size = new System.Drawing.Size(65, 12);
+            this.lblEmployeeID.Size = new System.Drawing.Size(98, 18);
             this.lblEmployeeID.TabIndex = 6;
             this.lblEmployeeID.Text = "员工编号：";
             // 
             // txtEmployeeID
             // 
-            this.txtEmployeeID.Location = new System.Drawing.Point(82, 48);
+            this.txtEmployeeID.Location = new System.Drawing.Point(123, 72);
+            this.txtEmployeeID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmployeeID.Name = "txtEmployeeID";
-            this.txtEmployeeID.Size = new System.Drawing.Size(114, 21);
+            this.txtEmployeeID.Size = new System.Drawing.Size(169, 28);
             this.txtEmployeeID.TabIndex = 7;
             // 
             // txtEmployeeName
             // 
-            this.txtEmployeeName.Location = new System.Drawing.Point(292, 48);
+            this.txtEmployeeName.Location = new System.Drawing.Point(438, 72);
+            this.txtEmployeeName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmployeeName.Name = "txtEmployeeName";
-            this.txtEmployeeName.Size = new System.Drawing.Size(114, 21);
+            this.txtEmployeeName.Size = new System.Drawing.Size(169, 28);
             this.txtEmployeeName.TabIndex = 9;
             // 
             // lblEmployeeName
             // 
             this.lblEmployeeName.AutoSize = true;
-            this.lblEmployeeName.Location = new System.Drawing.Point(232, 51);
+            this.lblEmployeeName.Location = new System.Drawing.Point(348, 76);
+            this.lblEmployeeName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmployeeName.Name = "lblEmployeeName";
-            this.lblEmployeeName.Size = new System.Drawing.Size(65, 12);
+            this.lblEmployeeName.Size = new System.Drawing.Size(98, 18);
             this.lblEmployeeName.TabIndex = 8;
             this.lblEmployeeName.Text = "员工姓名：";
             // 
             // lblSex
             // 
             this.lblSex.AutoSize = true;
-            this.lblSex.Location = new System.Drawing.Point(22, 95);
+            this.lblSex.Location = new System.Drawing.Point(33, 142);
+            this.lblSex.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSex.Name = "lblSex";
-            this.lblSex.Size = new System.Drawing.Size(65, 12);
+            this.lblSex.Size = new System.Drawing.Size(98, 18);
             this.lblSex.TabIndex = 14;
             this.lblSex.Text = "性    别：";
             // 
@@ -245,25 +251,28 @@
             this.cboSex.Items.AddRange(new object[] {
             "男",
             "女"});
-            this.cboSex.Location = new System.Drawing.Point(82, 91);
+            this.cboSex.Location = new System.Drawing.Point(123, 136);
+            this.cboSex.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboSex.Name = "cboSex";
-            this.cboSex.Size = new System.Drawing.Size(114, 20);
+            this.cboSex.Size = new System.Drawing.Size(169, 26);
             this.cboSex.TabIndex = 15;
             // 
             // lblBirthday
             // 
             this.lblBirthday.AutoSize = true;
-            this.lblBirthday.Location = new System.Drawing.Point(232, 95);
+            this.lblBirthday.Location = new System.Drawing.Point(348, 142);
+            this.lblBirthday.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBirthday.Name = "lblBirthday";
-            this.lblBirthday.Size = new System.Drawing.Size(65, 12);
+            this.lblBirthday.Size = new System.Drawing.Size(98, 18);
             this.lblBirthday.TabIndex = 16;
             this.lblBirthday.Text = "出生日期：";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(292, 89);
+            this.dateTimePicker1.Location = new System.Drawing.Point(438, 134);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(114, 21);
+            this.dateTimePicker1.Size = new System.Drawing.Size(169, 28);
             this.dateTimePicker1.TabIndex = 17;
             // 
             // cmbEmployeePost
@@ -272,9 +281,10 @@
             this.cmbEmployeePost.Items.AddRange(new object[] {
             "经理",
             "员工"});
-            this.cmbEmployeePost.Location = new System.Drawing.Point(83, 171);
+            this.cmbEmployeePost.Location = new System.Drawing.Point(124, 256);
+            this.cmbEmployeePost.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbEmployeePost.Name = "cmbEmployeePost";
-            this.cmbEmployeePost.Size = new System.Drawing.Size(114, 20);
+            this.cmbEmployeePost.Size = new System.Drawing.Size(169, 26);
             this.cmbEmployeePost.TabIndex = 29;
             // 
             // cmbEmployeeDepartment
@@ -283,95 +293,105 @@
             this.cmbEmployeeDepartment.Items.AddRange(new object[] {
             "电子",
             "食品部"});
-            this.cmbEmployeeDepartment.Location = new System.Drawing.Point(292, 171);
+            this.cmbEmployeeDepartment.Location = new System.Drawing.Point(438, 256);
+            this.cmbEmployeeDepartment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbEmployeeDepartment.Name = "cmbEmployeeDepartment";
-            this.cmbEmployeeDepartment.Size = new System.Drawing.Size(114, 20);
+            this.cmbEmployeeDepartment.Size = new System.Drawing.Size(169, 26);
             this.cmbEmployeeDepartment.TabIndex = 28;
             // 
             // lblEmployeeDepartment
             // 
             this.lblEmployeeDepartment.AutoSize = true;
-            this.lblEmployeeDepartment.Location = new System.Drawing.Point(227, 173);
+            this.lblEmployeeDepartment.Location = new System.Drawing.Point(340, 260);
+            this.lblEmployeeDepartment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmployeeDepartment.Name = "lblEmployeeDepartment";
-            this.lblEmployeeDepartment.Size = new System.Drawing.Size(65, 12);
+            this.lblEmployeeDepartment.Size = new System.Drawing.Size(98, 18);
             this.lblEmployeeDepartment.TabIndex = 27;
             this.lblEmployeeDepartment.Text = "所属部门：";
             // 
             // lblPost
             // 
             this.lblPost.AutoSize = true;
-            this.lblPost.Location = new System.Drawing.Point(22, 173);
+            this.lblPost.Location = new System.Drawing.Point(33, 260);
+            this.lblPost.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPost.Name = "lblPost";
-            this.lblPost.Size = new System.Drawing.Size(65, 12);
+            this.lblPost.Size = new System.Drawing.Size(98, 18);
             this.lblPost.TabIndex = 26;
             this.lblPost.Text = "员工职位：";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(292, 129);
+            this.txtEmail.Location = new System.Drawing.Point(438, 194);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(114, 21);
+            this.txtEmail.Size = new System.Drawing.Size(169, 28);
             this.txtEmail.TabIndex = 33;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(232, 132);
+            this.lblEmail.Location = new System.Drawing.Point(348, 198);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(65, 12);
+            this.lblEmail.Size = new System.Drawing.Size(98, 18);
             this.lblEmail.TabIndex = 32;
             this.lblEmail.Text = "电子邮箱：";
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(82, 129);
+            this.txtPhone.Location = new System.Drawing.Point(123, 194);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(114, 21);
+            this.txtPhone.Size = new System.Drawing.Size(169, 28);
             this.txtPhone.TabIndex = 31;
             // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(22, 132);
+            this.lblPhone.Location = new System.Drawing.Point(33, 198);
+            this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(65, 12);
+            this.lblPhone.Size = new System.Drawing.Size(98, 18);
             this.lblPhone.TabIndex = 30;
             this.lblPhone.Text = "手 机 号：";
             // 
             // txtEmployeeAddress
             // 
-            this.txtEmployeeAddress.Location = new System.Drawing.Point(494, 48);
+            this.txtEmployeeAddress.Location = new System.Drawing.Point(741, 72);
+            this.txtEmployeeAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmployeeAddress.MaxLength = 180;
             this.txtEmployeeAddress.Multiline = true;
             this.txtEmployeeAddress.Name = "txtEmployeeAddress";
-            this.txtEmployeeAddress.Size = new System.Drawing.Size(157, 146);
+            this.txtEmployeeAddress.Size = new System.Drawing.Size(234, 217);
             this.txtEmployeeAddress.TabIndex = 35;
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(429, 51);
+            this.lblAddress.Location = new System.Drawing.Point(644, 76);
+            this.lblAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(65, 12);
+            this.lblAddress.Size = new System.Drawing.Size(98, 18);
             this.lblAddress.TabIndex = 34;
             this.lblAddress.Text = "家庭地址：";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 213);
+            this.dataGridView1.Location = new System.Drawing.Point(36, 320);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(625, 110);
+            this.dataGridView1.Size = new System.Drawing.Size(938, 165);
             this.dataGridView1.TabIndex = 36;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Employee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 339);
+            this.ClientSize = new System.Drawing.Size(1077, 508);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtEmployeeAddress);
             this.Controls.Add(this.lblAddress);
@@ -392,6 +412,7 @@
             this.Controls.Add(this.txtEmployeeID);
             this.Controls.Add(this.lblEmployeeID);
             this.Controls.Add(this.toolStrip1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Employee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "员工信息";

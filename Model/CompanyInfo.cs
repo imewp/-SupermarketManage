@@ -14,7 +14,7 @@ namespace Model
         string companyPhone;
         string companyAddress;
         string companyRemarks;
-        int reDateTime;
+        DateTime reDateTime;
         int flag;
         public string CompanyID
         {
@@ -48,7 +48,7 @@ namespace Model
             get { return companyRemarks;}
             set { companyRemarks  = value; }
         }
-        public int ReDateTime
+        public DateTime ReDateTime
         {
             get { return reDateTime;}
             set { reDateTime = value;}

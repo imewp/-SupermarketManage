@@ -28,9 +28,18 @@ namespace SupermarketManage
             ControlStatus();
             flag = 3;
         }
-        public int panduan()
+        private void toolAmend_Click(object sender, EventArgs e)
         {
-            return flag;
+            ControlStatus();
+            txtEmployeeID.ReadOnly = true;
+            flag = 2;
+        }
+
+        private void toolCancel_Click(object sender, EventArgs e)
+        {
+            ClearControls();
+            ControlStatus();
+            txtEmployeeID.ReadOnly = false;
         }
 
         /// <summary>
@@ -63,7 +72,7 @@ namespace SupermarketManage
 
         private void toolSave_Click(object sender, EventArgs e)
         {
-            if (txtEmployeeID.Text == "" || txtEmployeeName.Text == "" || txtEmail.Text == "" || txtEmployeeAddress.Text == "" ||txtKeyWord.Text == "" || txtOK.Text == "" || txtPhone.Text == "")
+            if (txtEmployeeID.Text == "" || txtEmployeeName.Text == "" || txtEmail.Text == "" || txtEmployeeAddress.Text == "" || txtPhone.Text == "")
             {
                 MessageBox.Show("请将信息添加完整！");
                 return;
@@ -108,19 +117,6 @@ namespace SupermarketManage
             }
         }
 
-        private void toolAmend_Click(object sender, EventArgs e)
-        {
-            ControlStatus();
-            txtEmployeeID.ReadOnly = true;
-            flag = 2;
-        }
-
-        private void toolCancel_Click(object sender, EventArgs e)
-        {
-            ClearControls();
-            ControlStatus();
-            txtEmployeeID.ReadOnly = false;
-        }
 
         private void toolExit_Click(object sender, EventArgs e)
         {
@@ -177,7 +173,7 @@ namespace SupermarketManage
             {
                 case "员工姓名":
                     {
-                        strWhere = strWhere + " and EmployeeName like '" + employeeName + "'";
+                        strWhere = strWhere + " and EmployeeName like '%" + employeeName + "%'";
                     }
                     break;
                 case "员工性别":
