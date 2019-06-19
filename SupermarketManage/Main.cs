@@ -157,5 +157,41 @@ namespace SupermarketManage
             //退出-直接退出
             Application.Exit();
         }
+
+        private void 商品查询ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.MdiChildren.Length == 0)
+            {
+                GoodsSelect gs = new GoodsSelect();
+                gs.MdiParent = this;
+                gs.Show();
+            }
+            
+        }
+
+        private void 库存查询ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.MdiChildren.Length == 0)
+            {
+                KCGoodsFind kc = new KCGoodsFind();
+                kc.MdiParent = this;
+                kc.Show();
+            }
+        }
+
+        private void tsbtnRoomSearch_Click(object sender, EventArgs e)
+        {
+            if (this.MdiChildren.Length == 0)
+            {
+                KCGoodsFind kc = new KCGoodsFind();
+                kc.MdiParent = this;
+                kc.Show();
+            }
+        }
+
+        private void 库存报警ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
