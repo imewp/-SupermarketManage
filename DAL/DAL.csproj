@@ -45,6 +45,7 @@
     <Compile Include="EmployeeInfo.cs" />
     <Compile Include="JHGoodsInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SellGoodsInfo.cs" />
     <Compile Include="UserInfo.cs" />
   </ItemGroup>
   <ItemGroup>
