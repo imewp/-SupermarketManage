@@ -15,7 +15,7 @@ namespace SupermarketManage
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new JHGoods());
+            Application.Run(new Login());
         }
     }
 }

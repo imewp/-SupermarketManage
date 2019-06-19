@@ -34,7 +34,6 @@
             this.toolCancel = new System.Windows.Forms.ToolStripButton();
             this.toolAdd = new System.Windows.Forms.ToolStripButton();
             this.toolAmend = new System.Windows.Forms.ToolStripButton();
-            this.toolDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolExit = new System.Windows.Forms.ToolStripButton();
             this.txtGoodsID = new System.Windows.Forms.TextBox();
@@ -63,6 +62,7 @@
             this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.lblEmployeeID = new System.Windows.Forms.Label();
             this.numGoodsNum = new System.Windows.Forms.NumericUpDown();
+            this.toolDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGoodsNum)).BeginInit();
@@ -127,14 +127,6 @@
             this.toolAmend.Text = "修改";
             this.toolAmend.Click += new System.EventHandler(this.toolAmend_Click);
             // 
-            // toolDelete
-            // 
-            this.toolDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolDelete.Name = "toolDelete";
-            this.toolDelete.Size = new System.Drawing.Size(36, 28);
-            this.toolDelete.Text = "删除";
-            this.toolDelete.Click += new System.EventHandler(this.toolDelete_Click);
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
@@ -153,7 +145,7 @@
             // txtGoodsID
             // 
             this.txtGoodsID.Location = new System.Drawing.Point(95, 38);
-            this.txtGoodsID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGoodsID.Margin = new System.Windows.Forms.Padding(2);
             this.txtGoodsID.Name = "txtGoodsID";
             this.txtGoodsID.Size = new System.Drawing.Size(128, 21);
             this.txtGoodsID.TabIndex = 53;
@@ -171,7 +163,7 @@
             // txtGoodsName
             // 
             this.txtGoodsName.Location = new System.Drawing.Point(287, 38);
-            this.txtGoodsName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGoodsName.Margin = new System.Windows.Forms.Padding(2);
             this.txtGoodsName.Name = "txtGoodsName";
             this.txtGoodsName.Size = new System.Drawing.Size(128, 21);
             this.txtGoodsName.TabIndex = 55;
@@ -189,7 +181,7 @@
             // txtComName
             // 
             this.txtComName.Location = new System.Drawing.Point(95, 69);
-            this.txtComName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtComName.Margin = new System.Windows.Forms.Padding(2);
             this.txtComName.Name = "txtComName";
             this.txtComName.Size = new System.Drawing.Size(128, 21);
             this.txtComName.TabIndex = 57;
@@ -207,7 +199,7 @@
             // txtDepotName
             // 
             this.txtDepotName.Location = new System.Drawing.Point(287, 69);
-            this.txtDepotName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDepotName.Margin = new System.Windows.Forms.Padding(2);
             this.txtDepotName.Name = "txtDepotName";
             this.txtDepotName.Size = new System.Drawing.Size(128, 21);
             this.txtDepotName.TabIndex = 59;
@@ -248,7 +240,7 @@
             // txtGoodsJHPrice
             // 
             this.txtGoodsJHPrice.Location = new System.Drawing.Point(287, 101);
-            this.txtGoodsJHPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGoodsJHPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtGoodsJHPrice.Name = "txtGoodsJHPrice";
             this.txtGoodsJHPrice.Size = new System.Drawing.Size(128, 21);
             this.txtGoodsJHPrice.TabIndex = 64;
@@ -267,7 +259,7 @@
             // txtSellGoodsPrice
             // 
             this.txtSellGoodsPrice.Location = new System.Drawing.Point(95, 133);
-            this.txtSellGoodsPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSellGoodsPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtSellGoodsPrice.Name = "txtSellGoodsPrice";
             this.txtSellGoodsPrice.Size = new System.Drawing.Size(128, 21);
             this.txtSellGoodsPrice.TabIndex = 66;
@@ -285,7 +277,7 @@
             // txtGoodsNeedPrice
             // 
             this.txtGoodsNeedPrice.Location = new System.Drawing.Point(287, 133);
-            this.txtGoodsNeedPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGoodsNeedPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtGoodsNeedPrice.Name = "txtGoodsNeedPrice";
             this.txtGoodsNeedPrice.Size = new System.Drawing.Size(128, 21);
             this.txtGoodsNeedPrice.TabIndex = 68;
@@ -304,7 +296,7 @@
             // txtGoodsHasPay
             // 
             this.txtGoodsHasPay.Location = new System.Drawing.Point(95, 164);
-            this.txtGoodsHasPay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGoodsHasPay.Margin = new System.Windows.Forms.Padding(2);
             this.txtGoodsHasPay.Name = "txtGoodsHasPay";
             this.txtGoodsHasPay.Size = new System.Drawing.Size(128, 21);
             this.txtGoodsHasPay.TabIndex = 70;
@@ -333,7 +325,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(287, 161);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(128, 21);
             this.dateTimePicker1.TabIndex = 72;
@@ -351,7 +343,7 @@
             // txtRemarks
             // 
             this.txtRemarks.Location = new System.Drawing.Point(487, 69);
-            this.txtRemarks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRemarks.Margin = new System.Windows.Forms.Padding(2);
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.Size = new System.Drawing.Size(131, 110);
@@ -371,7 +363,7 @@
             // txtEmployeeID
             // 
             this.txtEmployeeID.Location = new System.Drawing.Point(487, 38);
-            this.txtEmployeeID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmployeeID.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmployeeID.Name = "txtEmployeeID";
             this.txtEmployeeID.Size = new System.Drawing.Size(128, 21);
             this.txtEmployeeID.TabIndex = 77;
@@ -392,6 +384,15 @@
             this.numGoodsNum.Name = "numGoodsNum";
             this.numGoodsNum.Size = new System.Drawing.Size(83, 21);
             this.numGoodsNum.TabIndex = 78;
+            // 
+            // toolDelete
+            // 
+            this.toolDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolDelete.Image")));
+            this.toolDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolDelete.Name = "toolDelete";
+            this.toolDelete.Size = new System.Drawing.Size(60, 28);
+            this.toolDelete.Text = "删除";
+            this.toolDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // JHGoods
             // 
@@ -425,7 +426,7 @@
             this.Controls.Add(this.txtGoodsID);
             this.Controls.Add(this.lblGoodsID);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "JHGoods";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "商品进货信息";
@@ -446,7 +447,6 @@
         private System.Windows.Forms.ToolStripButton toolCancel;
         private System.Windows.Forms.ToolStripButton toolAdd;
         private System.Windows.Forms.ToolStripButton toolAmend;
-        private System.Windows.Forms.ToolStripButton toolDelete;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolExit;
         private System.Windows.Forms.TextBox txtGoodsID;
@@ -475,5 +475,6 @@
         private System.Windows.Forms.TextBox txtEmployeeID;
         private System.Windows.Forms.Label lblEmployeeID;
         private System.Windows.Forms.NumericUpDown numGoodsNum;
+        private System.Windows.Forms.ToolStripButton toolDelete;
     }
 }
