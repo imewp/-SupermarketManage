@@ -191,7 +191,13 @@ namespace SupermarketManage
 
         private void 库存报警ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (this.MdiChildren.Length == 0)
+            {
+                KCAlarmNum kn = new KCAlarmNum();
+                kn.MdiParent = this;
+                kn.Show();
+            }
+            
         }
     }
 }

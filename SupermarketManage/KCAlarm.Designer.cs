@@ -202,6 +202,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnAdd);
             this.Name = "KCAlarmNum";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "库存报警";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
