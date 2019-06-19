@@ -16,9 +16,9 @@ namespace DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into JHGoodsInfo(");
-            strSql.Append("GoodsID,EmployeeID,CompanyName,DepotName,GoodsName,GoodsNum,GoodsUnit,GoodsJHPrice,GoodsSellPrice,GoodsNeedPay,GoodsHasPay,GoodsRemark,GoodsTime,Flag)");
+            strSql.Append("GoodsID,EmployeeID,CompanyName,DepotName,GoodsName,GoodsNum,GoodsUnit,GoodsJHPrice,GoodsSellPrice,GoodsNeedPay,GoodsHasPay,GoodsRemark,GoodsTime)");
             strSql.Append(" values (");
-            strSql.Append("@GoodsID,@EmployeeID,@CompanyName,@DepotName,@GoodsName,@GoodsNum,@GoodsUnit,@GoodsJHPrice,@GoodsSellPrice,@GoodsNeedPay,GoodsHasPay,GoodsRemark,GoodsTime,Flag)");
+            strSql.Append("@GoodsID,@EmployeeID,@CompanyName,@DepotName,@GoodsName,@GoodsNum,@GoodsUnit,@GoodsJHPrice,@GoodsSellPrice,@GoodsNeedPay,@GoodsHasPay,@GoodsRemark,@GoodsTime)");
             SqlParameter[] parameters = {
 					new SqlParameter("@GoodsID", SqlDbType.NVarChar,50),
 					new SqlParameter("@EmployeeID", SqlDbType.NVarChar,50),
@@ -32,8 +32,7 @@ namespace DAL
                     new SqlParameter("@GoodsNeedPay", SqlDbType.Float),
                     new SqlParameter("@GoodsHasPay", SqlDbType.Float),
                     new SqlParameter("@GoodsRemark", SqlDbType.NVarChar,200),
-					new SqlParameter("@GoodsTime", SqlDbType.DateTime),
-					new SqlParameter("@Flag", SqlDbType.Int)};
+					new SqlParameter("@GoodsTime", SqlDbType.DateTime)};
             parameters[0].Value = model.GoodsID;
             parameters[1].Value = model.EmployeeID;
             parameters[2].Value = model.CompanyName;
@@ -47,7 +46,6 @@ namespace DAL
             parameters[10].Value = model.GoodsHasPay;
             parameters[11].Value = model.GoodsRemark;
             parameters[12].Value = model.GoodsTime;
-            parameters[13].Value = model.Flag;
 
             int rows = DBHelper.ExecuteSql(strSql.ToString(), CommandType.Text, parameters);
             if (rows > 0)
@@ -74,11 +72,10 @@ namespace DAL
             strSql.Append("GoodsUnit=@GoodsUnit,");
             strSql.Append("GoodsJHPrice=@GoodsJHPrice,");
             strSql.Append("GoodsSellPrice=@GoodsSellPrice,");
-            strSql.Append("GoodsNeedPay=@GoodsNeedPay");
-            strSql.Append("GoodsHasPay=@GoodsHasPay");
-            strSql.Append("GoodsRemark=@GoodsRemark");
-            strSql.Append("GoodsTime=@GoodsTime");
-            strSql.Append("Flag=@Flag");
+            strSql.Append("GoodsNeedPay=@GoodsNeedPay,");
+            strSql.Append("GoodsHasPay=@GoodsHasPay,");
+            strSql.Append("GoodsRemark=@GoodsRemark,");
+            strSql.Append("GoodsTime=@GoodsTime ");
             strSql.Append(" where GoodsID=@GoodsID ");
             SqlParameter[] parameters = {
 					new SqlParameter("@GoodsID", SqlDbType.NVarChar,50),
