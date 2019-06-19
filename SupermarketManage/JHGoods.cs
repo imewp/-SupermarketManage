@@ -15,7 +15,7 @@ namespace SupermarketManage
         {
             InitializeComponent();
         }
-        int flag = 0;//标记   //1.添加  2.修改 3.删除 
+        int flag = 0;//标记   //1.添加  2.修改 
         /// <summary>
         /// 将控件恢复到原始状态
         /// </summary>
@@ -45,7 +45,6 @@ namespace SupermarketManage
             this.toolAdd.Enabled = !this.toolAdd.Enabled;
             this.toolCancel.Enabled = !this.toolCancel.Enabled;
             this.toolAmend.Enabled = !this.toolAmend.Enabled;
-            this.toolDelete.Enabled = !this.toolDelete.Enabled;
         }
 
         private void toolAdd_Click(object sender, EventArgs e)
@@ -97,7 +96,6 @@ namespace SupermarketManage
             model.GoodsRemark = txtRemarks.Text;
             model.GoodsTime = DateTime.Parse(dateTimePicker1.Text);
             BLL.JHGoodsInfo bll = new BLL.JHGoodsInfo();//实例化BLL层
-
             Model.KCInfo kcInfo = new Model.KCInfo();
             kcInfo.GoodsID = txtGoodsID.Text.Trim();
             kcInfo.GoodsName = txtGoodsName.Text;
@@ -105,8 +103,6 @@ namespace SupermarketManage
             kcInfo.DepotName = cboDepotName.Text.Trim();
             kcInfo.GoodsNum = int.Parse(numGoodsNum.Value.ToString());
             BLL.KCInfo bllkcInfo = new BLL.KCInfo();//实例化BLL层
-
-
             switch (flag)
             {
                 case 0:
@@ -133,16 +129,6 @@ namespace SupermarketManage
                         if (!bllkcInfo.Update(kcInfo))
                             MessageBox.Show("未能够把数据修改到仓库中");
                     } break;
-                case 3:
-                    {
-                        if (bll.Delete(model))//根据返回布尔值判断是否删除数据成功
-                        {
-                            DataBind();//窗体登录时绑定数据到DataGridView
-                            ControlStatus();
-                        }
-                        if (!bllkcInfo.Delete(kcInfo))
-                            MessageBox.Show("未能够把数据添加到仓库中");
-                    } break;
             }
         }
         public void DataBind()//定义一个函数用于绑定数据到DataGridView
@@ -157,6 +143,13 @@ namespace SupermarketManage
         {
             DataBind();//窗体登录时绑定数据到DataGridView
             ObtionEmployeeID(); //获取员工编号
+            ObtionCompanyName();//获取供应商名称
+        }
+        /// <summary>
+        /// 获取供应商表中的  供应商名称
+        /// </summary>
+        private void ObtionCompanyName()
+        {
             BLL.CompanyInfo bll = new BLL.CompanyInfo();
             DataSet ds = new DataSet();
             ds = bll.GetList();//执行SQL语句，将结果存在ds中
@@ -191,7 +184,7 @@ namespace SupermarketManage
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (flag == 2 || flag == 3)
+            if (flag == 2 )
             {
                 txtGoodsID.Text = dataGridView1.CurrentCell.OwningRow.Cells[0].Value.ToString();
                 cboEmployeeID.Text = dataGridView1.CurrentCell.OwningRow.Cells[1].Value.ToString();
@@ -220,12 +213,6 @@ namespace SupermarketManage
                 float sum = price * num;
                 txtGoodsNeedPrice.Text = sum.ToString();
             }
-        }
-
-        private void toolDelete_Click_1(object sender, EventArgs e)
-        {
-            ControlStatus();
-            flag = 3;
         }
     }
 }

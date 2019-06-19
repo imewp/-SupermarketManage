@@ -33,13 +33,10 @@
             this.toolSave = new System.Windows.Forms.ToolStripButton();
             this.toolCancel = new System.Windows.Forms.ToolStripButton();
             this.toolAdd = new System.Windows.Forms.ToolStripButton();
-            this.toolAmend = new System.Windows.Forms.ToolStripButton();
-            this.toolDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolExit = new System.Windows.Forms.ToolStripButton();
             this.DaSellGoodsTime = new System.Windows.Forms.DateTimePicker();
             this.txtdeSellPrice = new System.Windows.Forms.TextBox();
-            this.txtEmpID = new System.Windows.Forms.TextBox();
             this.txtSellRemark = new System.Windows.Forms.TextBox();
             this.txtSellNeedPay = new System.Windows.Forms.TextBox();
             this.txtdeSellHasPay = new System.Windows.Forms.TextBox();
@@ -56,10 +53,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtKCID = new System.Windows.Forms.TextBox();
+            this.txtDepotName = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtGoodsID = new System.Windows.Forms.TextBox();
             this.numSellGoodsNum = new System.Windows.Forms.NumericUpDown();
+            this.cboEmpID = new System.Windows.Forms.ComboBox();
+            this.lblComName = new System.Windows.Forms.Label();
+            this.txtCompanyName = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSellGoodsNum)).BeginInit();
@@ -72,14 +72,12 @@
             this.toolSave,
             this.toolCancel,
             this.toolAdd,
-            this.toolAmend,
-            this.toolDelete,
             this.toolStripSeparator2,
             this.toolExit});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(1047, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1031, 31);
             this.toolStrip1.TabIndex = 52;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -115,26 +113,6 @@
             this.toolAdd.Text = "添加";
             this.toolAdd.Click += new System.EventHandler(this.toolAdd_Click);
             // 
-            // toolAmend
-            // 
-            this.toolAmend.Image = ((System.Drawing.Image)(resources.GetObject("toolAmend.Image")));
-            this.toolAmend.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolAmend.Name = "toolAmend";
-            this.toolAmend.Size = new System.Drawing.Size(74, 28);
-            this.toolAmend.Tag = "4";
-            this.toolAmend.Text = "修改";
-            this.toolAmend.Click += new System.EventHandler(this.toolAmend_Click);
-            // 
-            // toolDelete
-            // 
-            this.toolDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolDelete.Image")));
-            this.toolDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolDelete.Name = "toolDelete";
-            this.toolDelete.Size = new System.Drawing.Size(74, 28);
-            this.toolDelete.Text = "删除";
-            this.toolDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolDelete.Click += new System.EventHandler(this.toolDelete_Click);
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
@@ -152,67 +130,60 @@
             // 
             // DaSellGoodsTime
             // 
-            this.DaSellGoodsTime.Location = new System.Drawing.Point(785, 139);
-            this.DaSellGoodsTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DaSellGoodsTime.Location = new System.Drawing.Point(768, 148);
+            this.DaSellGoodsTime.Margin = new System.Windows.Forms.Padding(4);
             this.DaSellGoodsTime.Name = "DaSellGoodsTime";
             this.DaSellGoodsTime.Size = new System.Drawing.Size(214, 28);
             this.DaSellGoodsTime.TabIndex = 86;
             // 
             // txtdeSellPrice
             // 
-            this.txtdeSellPrice.Location = new System.Drawing.Point(102, 202);
-            this.txtdeSellPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtdeSellPrice.Location = new System.Drawing.Point(128, 145);
+            this.txtdeSellPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtdeSellPrice.Name = "txtdeSellPrice";
             this.txtdeSellPrice.Size = new System.Drawing.Size(178, 28);
             this.txtdeSellPrice.TabIndex = 85;
-            this.txtdeSellPrice.TextChanged += new System.EventHandler(this.txtdeSellPrice_TextChanged);
-            // 
-            // txtEmpID
-            // 
-            this.txtEmpID.Location = new System.Drawing.Point(449, 49);
-            this.txtEmpID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtEmpID.Name = "txtEmpID";
-            this.txtEmpID.Size = new System.Drawing.Size(178, 28);
-            this.txtEmpID.TabIndex = 84;
             // 
             // txtSellRemark
             // 
-            this.txtSellRemark.Location = new System.Drawing.Point(740, 284);
-            this.txtSellRemark.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSellRemark.Location = new System.Drawing.Point(766, 194);
+            this.txtSellRemark.Margin = new System.Windows.Forms.Padding(4);
             this.txtSellRemark.Name = "txtSellRemark";
-            this.txtSellRemark.Size = new System.Drawing.Size(172, 28);
+            this.txtSellRemark.Size = new System.Drawing.Size(214, 28);
             this.txtSellRemark.TabIndex = 83;
             // 
             // txtSellNeedPay
             // 
             this.txtSellNeedPay.Enabled = false;
-            this.txtSellNeedPay.Location = new System.Drawing.Point(404, 202);
-            this.txtSellNeedPay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSellNeedPay.Location = new System.Drawing.Point(128, 194);
+            this.txtSellNeedPay.Margin = new System.Windows.Forms.Padding(4);
             this.txtSellNeedPay.Name = "txtSellNeedPay";
-            this.txtSellNeedPay.Size = new System.Drawing.Size(214, 28);
+            this.txtSellNeedPay.ReadOnly = true;
+            this.txtSellNeedPay.Size = new System.Drawing.Size(178, 28);
             this.txtSellNeedPay.TabIndex = 82;
             this.txtSellNeedPay.Text = "0";
             // 
             // txtdeSellHasPay
             // 
-            this.txtdeSellHasPay.Location = new System.Drawing.Point(740, 207);
-            this.txtdeSellHasPay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtdeSellHasPay.Location = new System.Drawing.Point(449, 194);
+            this.txtdeSellHasPay.Margin = new System.Windows.Forms.Padding(4);
             this.txtdeSellHasPay.Name = "txtdeSellHasPay";
-            this.txtdeSellHasPay.Size = new System.Drawing.Size(214, 28);
+            this.txtdeSellHasPay.Size = new System.Drawing.Size(178, 28);
             this.txtdeSellHasPay.TabIndex = 81;
             // 
             // txtGoodsName
             // 
             this.txtGoodsName.Location = new System.Drawing.Point(128, 98);
-            this.txtGoodsName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGoodsName.Margin = new System.Windows.Forms.Padding(4);
             this.txtGoodsName.Name = "txtGoodsName";
+            this.txtGoodsName.ReadOnly = true;
             this.txtGoodsName.Size = new System.Drawing.Size(178, 28);
             this.txtGoodsName.TabIndex = 79;
             // 
             // txtSellID
             // 
             this.txtSellID.Location = new System.Drawing.Point(128, 49);
-            this.txtSellID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSellID.Margin = new System.Windows.Forms.Padding(4);
             this.txtSellID.Name = "txtSellID";
             this.txtSellID.Size = new System.Drawing.Size(178, 28);
             this.txtSellID.TabIndex = 78;
@@ -220,7 +191,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(669, 288);
+            this.label9.Location = new System.Drawing.Point(713, 201);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(62, 18);
@@ -230,7 +201,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(633, 207);
+            this.label8.Location = new System.Drawing.Point(356, 197);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 18);
@@ -240,7 +211,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(297, 207);
+            this.label7.Location = new System.Drawing.Point(36, 197);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 18);
@@ -260,7 +231,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(-4, 207);
+            this.label5.Location = new System.Drawing.Point(36, 148);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 18);
@@ -270,17 +241,17 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(678, 143);
+            this.label4.Location = new System.Drawing.Point(679, 152);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 18);
             this.label4.TabIndex = 72;
-            this.label4.Text = "时  间  ：";
+            this.label4.Text = "销售时间：";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(-3, 248);
+            this.label3.Location = new System.Drawing.Point(356, 155);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 18);
@@ -290,7 +261,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 105);
+            this.label2.Location = new System.Drawing.Point(36, 101);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 18);
@@ -310,12 +281,12 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 370);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(39, 252);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1011, 225);
+            this.dataGridView1.Size = new System.Drawing.Size(942, 225);
             this.dataGridView1.TabIndex = 68;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -327,20 +298,21 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(98, 18);
             this.label10.TabIndex = 70;
-            this.label10.Text = "仓库编号：";
+            this.label10.Text = "仓库名称：";
             // 
-            // txtKCID
+            // txtDepotName
             // 
-            this.txtKCID.Location = new System.Drawing.Point(785, 49);
-            this.txtKCID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtKCID.Name = "txtKCID";
-            this.txtKCID.Size = new System.Drawing.Size(214, 28);
-            this.txtKCID.TabIndex = 79;
+            this.txtDepotName.Location = new System.Drawing.Point(767, 49);
+            this.txtDepotName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDepotName.Name = "txtDepotName";
+            this.txtDepotName.ReadOnly = true;
+            this.txtDepotName.Size = new System.Drawing.Size(214, 28);
+            this.txtDepotName.TabIndex = 79;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(678, 105);
+            this.label11.Location = new System.Drawing.Point(356, 105);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(98, 18);
@@ -349,34 +321,63 @@
             // 
             // txtGoodsID
             // 
-            this.txtGoodsID.Location = new System.Drawing.Point(785, 98);
-            this.txtGoodsID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGoodsID.Location = new System.Drawing.Point(449, 102);
+            this.txtGoodsID.Margin = new System.Windows.Forms.Padding(4);
             this.txtGoodsID.Name = "txtGoodsID";
-            this.txtGoodsID.Size = new System.Drawing.Size(214, 28);
+            this.txtGoodsID.ReadOnly = true;
+            this.txtGoodsID.Size = new System.Drawing.Size(178, 28);
             this.txtGoodsID.TabIndex = 79;
             // 
             // numSellGoodsNum
             // 
-            this.numSellGoodsNum.Location = new System.Drawing.Point(104, 244);
-            this.numSellGoodsNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numSellGoodsNum.Location = new System.Drawing.Point(449, 146);
+            this.numSellGoodsNum.Margin = new System.Windows.Forms.Padding(4);
             this.numSellGoodsNum.Name = "numSellGoodsNum";
             this.numSellGoodsNum.Size = new System.Drawing.Size(178, 28);
             this.numSellGoodsNum.TabIndex = 87;
             this.numSellGoodsNum.ValueChanged += new System.EventHandler(this.numSellGoodsNum_ValueChanged);
             // 
+            // cboEmpID
+            // 
+            this.cboEmpID.FormattingEnabled = true;
+            this.cboEmpID.Location = new System.Drawing.Point(449, 51);
+            this.cboEmpID.Name = "cboEmpID";
+            this.cboEmpID.Size = new System.Drawing.Size(178, 26);
+            this.cboEmpID.TabIndex = 88;
+            // 
+            // lblComName
+            // 
+            this.lblComName.AutoSize = true;
+            this.lblComName.Location = new System.Drawing.Point(661, 104);
+            this.lblComName.Name = "lblComName";
+            this.lblComName.Size = new System.Drawing.Size(116, 18);
+            this.lblComName.TabIndex = 89;
+            this.lblComName.Text = "供应商名称：";
+            // 
+            // txtCompanyName
+            // 
+            this.txtCompanyName.Location = new System.Drawing.Point(768, 98);
+            this.txtCompanyName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.ReadOnly = true;
+            this.txtCompanyName.Size = new System.Drawing.Size(214, 28);
+            this.txtCompanyName.TabIndex = 90;
+            // 
             // SellGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1047, 614);
+            this.ClientSize = new System.Drawing.Size(1031, 503);
+            this.Controls.Add(this.txtCompanyName);
+            this.Controls.Add(this.lblComName);
+            this.Controls.Add(this.cboEmpID);
             this.Controls.Add(this.numSellGoodsNum);
             this.Controls.Add(this.DaSellGoodsTime);
             this.Controls.Add(this.txtdeSellPrice);
-            this.Controls.Add(this.txtEmpID);
             this.Controls.Add(this.txtSellRemark);
             this.Controls.Add(this.txtSellNeedPay);
             this.Controls.Add(this.txtdeSellHasPay);
-            this.Controls.Add(this.txtKCID);
+            this.Controls.Add(this.txtDepotName);
             this.Controls.Add(this.txtGoodsID);
             this.Controls.Add(this.txtGoodsName);
             this.Controls.Add(this.txtSellID);
@@ -393,7 +394,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SellGoods";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "商品销售";
@@ -413,12 +414,10 @@
         private System.Windows.Forms.ToolStripButton toolSave;
         private System.Windows.Forms.ToolStripButton toolCancel;
         private System.Windows.Forms.ToolStripButton toolAdd;
-        private System.Windows.Forms.ToolStripButton toolAmend;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolExit;
         private System.Windows.Forms.DateTimePicker DaSellGoodsTime;
         private System.Windows.Forms.TextBox txtdeSellPrice;
-        private System.Windows.Forms.TextBox txtEmpID;
         private System.Windows.Forms.TextBox txtSellRemark;
         private System.Windows.Forms.TextBox txtSellNeedPay;
         private System.Windows.Forms.TextBox txtdeSellHasPay;
@@ -434,11 +433,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ToolStripButton toolDelete;
         private System.Windows.Forms.Label label10;
-        public System.Windows.Forms.TextBox txtKCID;
+        public System.Windows.Forms.TextBox txtDepotName;
         private System.Windows.Forms.Label label11;
         public System.Windows.Forms.TextBox txtGoodsID;
         private System.Windows.Forms.NumericUpDown numSellGoodsNum;
+        private System.Windows.Forms.ComboBox cboEmpID;
+        private System.Windows.Forms.Label lblComName;
+        public System.Windows.Forms.TextBox txtCompanyName;
     }
 }

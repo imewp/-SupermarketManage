@@ -69,6 +69,7 @@
             this.tsbtnCheckOut = new System.Windows.Forms.ToolStripButton();
             this.tsbtnRoomSearch = new System.Windows.Forms.ToolStripButton();
             this.tsbtnUser = new System.Windows.Forms.ToolStripButton();
+            this.数据清理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tsSupermarket.SuspendLayout();
@@ -158,14 +159,14 @@
             // 商品销售ToolStripMenuItem
             // 
             this.商品销售ToolStripMenuItem.Name = "商品销售ToolStripMenuItem";
-            this.商品销售ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.商品销售ToolStripMenuItem.Size = new System.Drawing.Size(164, 30);
             this.商品销售ToolStripMenuItem.Text = "商品销售";
             this.商品销售ToolStripMenuItem.Click += new System.EventHandler(this.商品销售ToolStripMenuItem_Click);
             // 
             // 商品退货ToolStripMenuItem
             // 
             this.商品退货ToolStripMenuItem.Name = "商品退货ToolStripMenuItem";
-            this.商品退货ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.商品退货ToolStripMenuItem.Size = new System.Drawing.Size(164, 30);
             this.商品退货ToolStripMenuItem.Text = "商品退货";
             this.商品退货ToolStripMenuItem.Click += new System.EventHandler(this.商品退货ToolStripMenuItem_Click);
             // 
@@ -196,7 +197,8 @@
             // 
             this.系统维护ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.数据备份ToolStripMenuItem,
-            this.数据还原ToolStripMenuItem});
+            this.数据还原ToolStripMenuItem,
+            this.数据清理ToolStripMenuItem});
             this.系统维护ToolStripMenuItem.Name = "系统维护ToolStripMenuItem";
             this.系统维护ToolStripMenuItem.Size = new System.Drawing.Size(116, 28);
             this.系统维护ToolStripMenuItem.Text = "系统维护(&S)";
@@ -204,13 +206,14 @@
             // 数据备份ToolStripMenuItem
             // 
             this.数据备份ToolStripMenuItem.Name = "数据备份ToolStripMenuItem";
-            this.数据备份ToolStripMenuItem.Size = new System.Drawing.Size(164, 30);
+            this.数据备份ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.数据备份ToolStripMenuItem.Text = "数据备份";
+            this.数据备份ToolStripMenuItem.Click += new System.EventHandler(this.数据备份ToolStripMenuItem_Click);
             // 
             // 数据还原ToolStripMenuItem
             // 
             this.数据还原ToolStripMenuItem.Name = "数据还原ToolStripMenuItem";
-            this.数据还原ToolStripMenuItem.Size = new System.Drawing.Size(164, 30);
+            this.数据还原ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.数据还原ToolStripMenuItem.Text = "数据还原";
             // 
             // 主题ToolStripMenuItem
@@ -266,28 +269,28 @@
             // 登录ToolStripMenuItem
             // 
             this.登录ToolStripMenuItem.Name = "登录ToolStripMenuItem";
-            this.登录ToolStripMenuItem.Size = new System.Drawing.Size(196, 30);
+            this.登录ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.登录ToolStripMenuItem.Text = "登录Internet";
             this.登录ToolStripMenuItem.Click += new System.EventHandler(this.登录ToolStripMenuItem_Click);
             // 
             // 启动WordToolStripMenuItem
             // 
             this.启动WordToolStripMenuItem.Name = "启动WordToolStripMenuItem";
-            this.启动WordToolStripMenuItem.Size = new System.Drawing.Size(196, 30);
+            this.启动WordToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.启动WordToolStripMenuItem.Text = "启动Word";
             this.启动WordToolStripMenuItem.Click += new System.EventHandler(this.启动WordToolStripMenuItem_Click);
             // 
             // 启动ToolStripMenuItem
             // 
             this.启动ToolStripMenuItem.Name = "启动ToolStripMenuItem";
-            this.启动ToolStripMenuItem.Size = new System.Drawing.Size(196, 30);
+            this.启动ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.启动ToolStripMenuItem.Text = "启动Excel";
             this.启动ToolStripMenuItem.Click += new System.EventHandler(this.启动ToolStripMenuItem_Click);
             // 
             // 计算器ToolStripMenuItem
             // 
             this.计算器ToolStripMenuItem.Name = "计算器ToolStripMenuItem";
-            this.计算器ToolStripMenuItem.Size = new System.Drawing.Size(196, 30);
+            this.计算器ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.计算器ToolStripMenuItem.Text = "计算器";
             this.计算器ToolStripMenuItem.Click += new System.EventHandler(this.计算器ToolStripMenuItem_Click);
             // 
@@ -413,6 +416,12 @@
             this.tsbtnUser.Text = "数据备份";
             this.tsbtnUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
+            // 数据清理ToolStripMenuItem
+            // 
+            this.数据清理ToolStripMenuItem.Name = "数据清理ToolStripMenuItem";
+            this.数据清理ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.数据清理ToolStripMenuItem.Text = "数据清理";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -482,6 +491,7 @@
         private System.Windows.Forms.ToolStripMenuItem 主题三ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 主题四ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 直接退出ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 数据清理ToolStripMenuItem;
     }
 }
 

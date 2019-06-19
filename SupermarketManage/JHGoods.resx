@@ -171,16 +171,6 @@
         aQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="toolDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADfSURBVDhPY6AqyMjJ/U8KhmqDAJDAk0+fwBLEABQDYJrJ
-        MgBZM8yAJ18+E8QoBqDj5z9/EsQgdXADQOAtiRjDgG1HT2Dg7cdO/r8pJPn/urzq/5179oP5IHxD0+D/
-        FTFZVAPe//z7/8Pvf/8//vmPgkEGgPAdXWMwH0TDxFAMOH39KnZ8+QJcAzLG8MKUNdvwYmTNOw6dxTTg
-        0S/s+N7rdyiaYTgzOwfVgFU792HFyJqQ+Vv1TVANOHj7BVYM04BNDMWAlTe+APHX/ytufgPi71jx8lsI
-        jBIG5GIGBgYGAG1HnN2b8xmxAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="toolExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

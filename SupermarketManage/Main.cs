@@ -220,5 +220,16 @@ namespace SupermarketManage
                 sg.Show();
             }
         }
+
+        private void 数据备份ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.MdiChildren.Length == 0)
+            {
+                DataBackup backup = new DataBackup();
+                backup.MdiParent = this;
+                backup.Show();
+            }
+            
+        }
     }
 }

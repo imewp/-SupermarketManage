@@ -34,7 +34,6 @@
             this.toolCancel = new System.Windows.Forms.ToolStripButton();
             this.toolAdd = new System.Windows.Forms.ToolStripButton();
             this.toolAmend = new System.Windows.Forms.ToolStripButton();
-            this.toolDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolExit = new System.Windows.Forms.ToolStripButton();
             this.txtGoodsID = new System.Windows.Forms.TextBox();
@@ -76,7 +75,6 @@
             this.toolCancel,
             this.toolAdd,
             this.toolAmend,
-            this.toolDelete,
             this.toolStripSeparator2,
             this.toolExit});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -127,16 +125,6 @@
             this.toolAmend.Tag = "4";
             this.toolAmend.Text = "修改";
             this.toolAmend.Click += new System.EventHandler(this.toolAmend_Click);
-            // 
-            // toolDelete
-            // 
-            this.toolDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolDelete.Image")));
-            this.toolDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolDelete.Name = "toolDelete";
-            this.toolDelete.Size = new System.Drawing.Size(74, 28);
-            this.toolDelete.Text = "删除";
-            this.toolDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolDelete.Click += new System.EventHandler(this.toolDelete_Click_1);
             // 
             // toolStripSeparator2
             // 
@@ -465,7 +453,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblEmployeeID;
         private System.Windows.Forms.NumericUpDown numGoodsNum;
-        private System.Windows.Forms.ToolStripButton toolDelete;
         private System.Windows.Forms.ComboBox cboEmployeeID;
         private System.Windows.Forms.ComboBox cboComName;
         private System.Windows.Forms.ComboBox cboDepotName;

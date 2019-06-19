@@ -15,23 +15,12 @@ namespace SupermarketManage
         {
             InitializeComponent();
         }
-        int flag = 0;//标记   //1.添加  2.修改 3.删除 
+        int flag = 0;//标记   //1.添加
         private void toolAdd_Click(object sender, EventArgs e)
         {
             ClearControls();
             ControlStatus();
             flag = 1;
-        }
-        private void toolDelete_Click(object sender, EventArgs e)
-        {
-            ControlStatus();
-            flag = 3;
-        }
-        private void toolAmend_Click(object sender, EventArgs e)
-        {
-            ControlStatus();
-            txtSellID.ReadOnly = true;
-            flag = 2;
         }
 
         private void toolCancel_Click(object sender, EventArgs e)
@@ -47,9 +36,10 @@ namespace SupermarketManage
         private void ClearControls()
         {
             txtSellID.Text = "";
-            txtKCID.Text = "";
+            txtDepotName.Text = "";
             txtGoodsID.Text = "";
-            txtEmpID.Text = "";
+            txtDepotName.Text = "";
+            txtCompanyName.Text = "";
             txtGoodsName.Text = "";
             numSellGoodsNum.Value = 0;
             this.DaSellGoodsTime.Value = DateTime.Now;
@@ -57,6 +47,7 @@ namespace SupermarketManage
             txtSellNeedPay.Text = "";
             txtdeSellHasPay.Text = "";
             txtSellRemark.Text = "";
+            cboEmpID.Text = "";
         }
         /// <summary>
         /// 控制控件状态
@@ -66,22 +57,20 @@ namespace SupermarketManage
             this.toolSave.Enabled = !this.toolSave.Enabled;
             this.toolAdd.Enabled = !this.toolAdd.Enabled;
             this.toolCancel.Enabled = !this.toolCancel.Enabled;
-            this.toolAmend.Enabled = !this.toolAmend.Enabled;
-            this.toolDelete.Enabled = !this.toolDelete.Enabled;
         }
 
         private void toolSave_Click(object sender, EventArgs e)
         {
-            if (txtSellID.Text == "" || txtKCID.Text == "" || txtGoodsID.Text == "" || txtEmpID.Text == "" || txtGoodsName.Text == "" || txtdeSellPrice.Text == "" || txtSellNeedPay.Text == "" || txtdeSellHasPay.Text == "" || txtSellRemark.Text == "")
+            if (txtSellID.Text == "" || txtDepotName.Text == "" || txtGoodsID.Text == "" || txtGoodsName.Text == "" || txtdeSellPrice.Text == "" || txtSellNeedPay.Text == "" || txtdeSellHasPay.Text == "")
             {
                 MessageBox.Show("请将信息添加完整！");
                 return;
             }
             Model.SellGoodsInfo model = new Model.SellGoodsInfo();//实例化model层
             model.SellID = txtSellID.Text.Trim();
-            model.KcID = txtKCID.Text.Trim();
+            model.KcID = txtDepotName.Text.Trim();
             model.GoodsID = txtGoodsID.Text.Trim();
-            model.EmployeeID = txtEmpID.Text.Trim();
+            model.EmployeeID = txtDepotName.Text.Trim();
             model.GoodsName = txtGoodsName.Text.Trim();
             model.SellGoodsNum = int.Parse(numSellGoodsNum.Value.ToString());
             model.SellGoodsTime = DateTime.Parse(this.DaSellGoodsTime.Text);
@@ -90,6 +79,18 @@ namespace SupermarketManage
             model.SellHasPay = txtdeSellHasPay.Text.Trim();
             model.SellRemark = txtSellRemark.Text.Trim(); 
             BLL.SellGoodsInfo bll = new BLL.SellGoodsInfo();//实例化BLL层
+
+            Model.KCInfo kcInfo = new Model.KCInfo();
+            kcInfo.GoodsID = txtGoodsID.Text.Trim();
+            kcInfo.GoodsName = txtGoodsName.Text;
+            kcInfo.DepotName = txtDepotName.Text.Trim();
+            kcInfo.CompanyName = txtCompanyName.Text.Trim();
+            string strWhere = " GoodsID = '" + kcInfo.GoodsID + "'";
+            BLL.KCInfo bllkcInfo = new BLL.KCInfo();//实例化BLL层
+            DataSet ds = new DataSet();
+            ds = bllkcInfo.GetList(strWhere);
+            int sum = int.Parse(ds.Tables[0].Rows[0]["商品数量"].ToString());
+            kcInfo.GoodsNum = sum - int.Parse(numSellGoodsNum.Value.ToString());
             switch (flag)
             {
                 case 0:
@@ -103,22 +104,8 @@ namespace SupermarketManage
                             DataBind();//窗体登录时绑定数据到DataGridView
                             ControlStatus();
                         }
-                    } break;
-                case 2:
-                    {
-                        if (bll.Update(model))//根据返回布尔值判断是否修改数据成功
-                        {
-                            DataBind();//窗体登录时绑定数据到DataGridView
-                            ControlStatus();
-                        }
-                    } break;
-                case 3:
-                    {
-                        if (bll.Delete(model))//根据返回布尔值判断是否删除数据成功
-                        {
-                            DataBind();//窗体登录时绑定数据到DataGridView
-                            ControlStatus();
-                        }
+                        if (!bllkcInfo.Update(kcInfo))
+                            MessageBox.Show("未能够把数据添加到仓库中");
                     } break;
             }
         }
@@ -130,7 +117,7 @@ namespace SupermarketManage
         }
         public void DataBind()//定义一个函数用于绑定数据到DataGridView
         {
-            BLL.SellGoodsInfo bll = new BLL.SellGoodsInfo();
+            BLL.JHGoodsInfo bll = new BLL.JHGoodsInfo();
             DataSet ds = new DataSet();
             ds = bll.GetList();//执行SQL语句，将结果存在ds中
             dataGridView1.DataSource = ds.Tables[0];//将ds中的表作为DataGridView的数据源   
@@ -139,37 +126,33 @@ namespace SupermarketManage
         private void Employee_Load(object sender, EventArgs e)
         {
             DataBind();//窗体登录时绑定数据到DataGridView
+            ObtionEmployeeID();
         }
-
+        /// <summary>
+        /// 获取员工表中的  员工编号
+        /// </summary>
+        private void ObtionEmployeeID()
+        {
+            BLL.Employee bll = new BLL.Employee();
+            DataSet ds = new DataSet();
+            ds = bll.GetList();//执行SQL语句，将结果存在ds中
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                string[] array = new string[ds.Tables[0].Rows.Count];
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    array[i] = ds.Tables[0].Rows[i]["员工编号"].ToString();
+                    cboEmpID.Items.Add(array[i]);
+                }
+            }
+        }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (flag == 2 || flag == 3)
-            {
-                txtSellID.Text = dataGridView1.CurrentCell.OwningRow.Cells[0].Value.ToString();
-                txtKCID.Text = dataGridView1.CurrentCell.OwningRow.Cells[1].Value.ToString();
-                txtGoodsID.Text = dataGridView1.CurrentCell.OwningRow.Cells[2].Value.ToString();
-                txtEmpID.Text = dataGridView1.CurrentCell.OwningRow.Cells[3].Value.ToString();
-                txtGoodsName.Text = dataGridView1.CurrentCell.OwningRow.Cells[4].Value.ToString();
-                numSellGoodsNum.Value = decimal.Parse(dataGridView1.CurrentCell.OwningRow.Cells[5].Value.ToString());
-                DaSellGoodsTime.Text = dataGridView1.CurrentCell.OwningRow.Cells[6].Value.ToString();
-                txtdeSellPrice.Text = dataGridView1.CurrentCell.OwningRow.Cells[7].Value.ToString();
-                txtSellNeedPay.Text = dataGridView1.CurrentCell.OwningRow.Cells[8].Value.ToString();
-                txtdeSellHasPay.Text = dataGridView1.CurrentCell.OwningRow.Cells[9].Value.ToString();
-                txtSellRemark.Text = dataGridView1.CurrentCell.OwningRow.Cells[10].Value.ToString();
-            }
-        }
-
-        private void txtdeSellPrice_TextChanged(object sender, EventArgs e)
-        {
-            if (txtdeSellPrice.Text == "0")
-                return;
-            float price = float.Parse(txtdeSellPrice.Text.Trim());
-            float num = float.Parse(numSellGoodsNum.Value.ToString());
-            if (txtdeSellPrice.Text.Trim() != "")
-            {
-                float sum = price * num;
-                txtSellNeedPay.Text = sum.ToString();
-            }
+            txtDepotName.Text = dataGridView1.CurrentCell.OwningRow.Cells[3].Value.ToString();
+            txtCompanyName.Text = dataGridView1.CurrentCell.OwningRow.Cells[2].Value.ToString();
+            txtGoodsName.Text = dataGridView1.CurrentCell.OwningRow.Cells[4].Value.ToString();
+            txtGoodsID.Text = dataGridView1.CurrentCell.OwningRow.Cells[0].Value.ToString();
+            txtdeSellPrice.Text = dataGridView1.CurrentCell.OwningRow.Cells[8].Value.ToString();
         }
 
         private void numSellGoodsNum_ValueChanged(object sender, EventArgs e)

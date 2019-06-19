@@ -54,12 +54,19 @@
     <Compile Include="Company.Designer.cs">
       <DependentUpon>Company.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataBackup.Designer.cs">
+      <DependentUpon>DataBackup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Employee.Designer.cs">
       <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="getSqlConnection.cs" />
     <Compile Include="GoodsSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +128,9 @@
     </Compile>
     <EmbeddedResource Include="Company.resx">
       <DependentUpon>Company.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataBackup.resx">
+      <DependentUpon>DataBackup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
