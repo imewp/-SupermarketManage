@@ -41,9 +41,7 @@
             this.lblGoodsID = new System.Windows.Forms.Label();
             this.txtGoodsName = new System.Windows.Forms.TextBox();
             this.lblGoodsName = new System.Windows.Forms.Label();
-            this.txtComName = new System.Windows.Forms.TextBox();
             this.lblComName = new System.Windows.Forms.Label();
-            this.txtDepotName = new System.Windows.Forms.TextBox();
             this.lblDepotName = new System.Windows.Forms.Label();
             this.lblGoodsNum = new System.Windows.Forms.Label();
             this.cmbGoodsUnit = new System.Windows.Forms.ComboBox();
@@ -60,9 +58,11 @@
             this.lblGoodsRemark = new System.Windows.Forms.Label();
             this.txtRemarks = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.lblEmployeeID = new System.Windows.Forms.Label();
             this.numGoodsNum = new System.Windows.Forms.NumericUpDown();
+            this.cboEmployeeID = new System.Windows.Forms.ComboBox();
+            this.cboComName = new System.Windows.Forms.ComboBox();
+            this.cboDepotName = new System.Windows.Forms.ComboBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGoodsNum)).BeginInit();
@@ -136,6 +136,7 @@
             this.toolDelete.Size = new System.Drawing.Size(74, 28);
             this.toolDelete.Text = "删除";
             this.toolDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolDelete.Click += new System.EventHandler(this.toolDelete_Click_1);
             // 
             // toolStripSeparator2
             // 
@@ -184,13 +185,6 @@
             this.lblGoodsName.TabIndex = 54;
             this.lblGoodsName.Text = "商品名称：";
             // 
-            // txtComName
-            // 
-            this.txtComName.Location = new System.Drawing.Point(142, 104);
-            this.txtComName.Name = "txtComName";
-            this.txtComName.Size = new System.Drawing.Size(190, 28);
-            this.txtComName.TabIndex = 57;
-            // 
             // lblComName
             // 
             this.lblComName.AutoSize = true;
@@ -199,13 +193,6 @@
             this.lblComName.Size = new System.Drawing.Size(116, 18);
             this.lblComName.TabIndex = 56;
             this.lblComName.Text = "供应商名称：";
-            // 
-            // txtDepotName
-            // 
-            this.txtDepotName.Location = new System.Drawing.Point(430, 104);
-            this.txtDepotName.Name = "txtDepotName";
-            this.txtDepotName.Size = new System.Drawing.Size(190, 28);
-            this.txtDepotName.TabIndex = 59;
             // 
             // lblDepotName
             // 
@@ -234,7 +221,7 @@
             "把",
             "车"});
             this.cmbGoodsUnit.Location = new System.Drawing.Point(272, 152);
-            this.cmbGoodsUnit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbGoodsUnit.Margin = new System.Windows.Forms.Padding(4);
             this.cmbGoodsUnit.Name = "cmbGoodsUnit";
             this.cmbGoodsUnit.Size = new System.Drawing.Size(60, 26);
             this.cmbGoodsUnit.TabIndex = 62;
@@ -345,20 +332,13 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(42, 316);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(884, 225);
             this.dataGridView1.TabIndex = 75;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // txtEmployeeID
-            // 
-            this.txtEmployeeID.Location = new System.Drawing.Point(730, 57);
-            this.txtEmployeeID.Name = "txtEmployeeID";
-            this.txtEmployeeID.Size = new System.Drawing.Size(190, 28);
-            this.txtEmployeeID.TabIndex = 77;
             // 
             // lblEmployeeID
             // 
@@ -372,18 +352,51 @@
             // numGoodsNum
             // 
             this.numGoodsNum.Location = new System.Drawing.Point(142, 150);
-            this.numGoodsNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numGoodsNum.Margin = new System.Windows.Forms.Padding(4);
             this.numGoodsNum.Name = "numGoodsNum";
             this.numGoodsNum.Size = new System.Drawing.Size(124, 28);
             this.numGoodsNum.TabIndex = 78;
+            // 
+            // cboEmployeeID
+            // 
+            this.cboEmployeeID.FormattingEnabled = true;
+            this.cboEmployeeID.Location = new System.Drawing.Point(730, 57);
+            this.cboEmployeeID.Name = "cboEmployeeID";
+            this.cboEmployeeID.Size = new System.Drawing.Size(196, 26);
+            this.cboEmployeeID.TabIndex = 79;
+            // 
+            // cboComName
+            // 
+            this.cboComName.FormattingEnabled = true;
+            this.cboComName.Location = new System.Drawing.Point(145, 104);
+            this.cboComName.Name = "cboComName";
+            this.cboComName.Size = new System.Drawing.Size(187, 26);
+            this.cboComName.TabIndex = 80;
+            // 
+            // cboDepotName
+            // 
+            this.cboDepotName.FormattingEnabled = true;
+            this.cboDepotName.Items.AddRange(new object[] {
+            "鑫兴仓储公司",
+            "思展仓储公司",
+            "金展仓储公司",
+            "金山仓储公司",
+            "宝特瑞达仓储公司",
+            "顺力仓储公司"});
+            this.cboDepotName.Location = new System.Drawing.Point(430, 103);
+            this.cboDepotName.Name = "cboDepotName";
+            this.cboDepotName.Size = new System.Drawing.Size(187, 26);
+            this.cboDepotName.TabIndex = 81;
             // 
             // JHGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 568);
+            this.Controls.Add(this.cboDepotName);
+            this.Controls.Add(this.cboComName);
+            this.Controls.Add(this.cboEmployeeID);
             this.Controls.Add(this.numGoodsNum);
-            this.Controls.Add(this.txtEmployeeID);
             this.Controls.Add(this.lblEmployeeID);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtRemarks);
@@ -400,9 +413,7 @@
             this.Controls.Add(this.lblGoodsJHPrice);
             this.Controls.Add(this.cmbGoodsUnit);
             this.Controls.Add(this.lblGoodsNum);
-            this.Controls.Add(this.txtDepotName);
             this.Controls.Add(this.lblDepotName);
-            this.Controls.Add(this.txtComName);
             this.Controls.Add(this.lblComName);
             this.Controls.Add(this.txtGoodsName);
             this.Controls.Add(this.lblGoodsName);
@@ -435,9 +446,7 @@
         private System.Windows.Forms.Label lblGoodsID;
         private System.Windows.Forms.TextBox txtGoodsName;
         private System.Windows.Forms.Label lblGoodsName;
-        private System.Windows.Forms.TextBox txtComName;
         private System.Windows.Forms.Label lblComName;
-        private System.Windows.Forms.TextBox txtDepotName;
         private System.Windows.Forms.Label lblDepotName;
         private System.Windows.Forms.Label lblGoodsNum;
         private System.Windows.Forms.ComboBox cmbGoodsUnit;
@@ -454,9 +463,11 @@
         private System.Windows.Forms.Label lblGoodsRemark;
         private System.Windows.Forms.TextBox txtRemarks;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox txtEmployeeID;
         private System.Windows.Forms.Label lblEmployeeID;
         private System.Windows.Forms.NumericUpDown numGoodsNum;
         private System.Windows.Forms.ToolStripButton toolDelete;
+        private System.Windows.Forms.ComboBox cboEmployeeID;
+        private System.Windows.Forms.ComboBox cboComName;
+        private System.Windows.Forms.ComboBox cboDepotName;
     }
 }
