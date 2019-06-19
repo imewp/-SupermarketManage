@@ -204,10 +204,16 @@ namespace SupermarketManage
         {
             if (this.MdiChildren.Length == 0)
             {
-                SellGoods kn = new SellGoods();
-                kn.MdiParent = this;
-                kn.Show();
+                SellGoods sg = new SellGoods();
+                sg.MdiParent = this;
+                sg.Show();
             }
+           
+        }
+
+        private void 商品退货ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

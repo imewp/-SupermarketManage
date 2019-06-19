@@ -216,7 +216,7 @@
             this.lblCompanyName.Name = "lblCompanyName";
             this.lblCompanyName.Size = new System.Drawing.Size(116, 18);
             this.lblCompanyName.TabIndex = 11;
-            this.lblCompanyName.Text = "供应商姓名：";
+            this.lblCompanyName.Text = "供应商名称：";
             // 
             // txtCompanyDirector
             // 
