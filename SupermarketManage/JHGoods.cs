@@ -27,7 +27,7 @@ namespace SupermarketManage
             txtComName.Text = "";
             txtDepotName.Text = "";
             txtGoodsName.Text = "";
-            txtGoodsNum.Text = "0";
+            numGoodsNum.Value = 0;
             cmbGoodsUnit.SelectedIndex = 0;
             txtGoodsJHPrice.Text = "0";
             txtSellGoodsPrice.Text = "0";
@@ -78,6 +78,7 @@ namespace SupermarketManage
             ClearControls();
             ControlStatus();
             txtGoodsID.ReadOnly = false;
+            flag = 0;
         }
 
         private void toolSave_Click(object sender, EventArgs e)
@@ -93,7 +94,7 @@ namespace SupermarketManage
             model.CompanyName = txtComName.Text.Trim();
             model.DepotName = txtDepotName.Text.Trim();
             model.GoodsName = txtGoodsName.Text;
-            model.GoodsName = txtGoodsNum.Text;
+            model.GoodsNum = int.Parse(numGoodsNum.Value.ToString());
             model.GoodsUnit = cmbGoodsUnit.Text.Trim();
             model.GoodsJHPrice = float.Parse(txtGoodsJHPrice.Text.Trim());
             model.GoodsSellPrice = float.Parse(txtSellGoodsPrice.Text.Trim());
@@ -136,7 +137,7 @@ namespace SupermarketManage
         }
         public void DataBind()//定义一个函数用于绑定数据到DataGridView
         {
-            BLL.Employee bll = new BLL.Employee();
+            BLL.JHGoodsInfo bll = new BLL.JHGoodsInfo();
             DataSet ds = new DataSet();
             ds = bll.GetList();//执行SQL语句，将结果存在ds中
             dataGridView1.DataSource = ds.Tables[0];//将ds中的表作为DataGridView的数据源   
@@ -156,14 +157,14 @@ namespace SupermarketManage
                 txtComName.Text = dataGridView1.CurrentCell.OwningRow.Cells[2].Value.ToString();
                 txtDepotName.Text = dataGridView1.CurrentCell.OwningRow.Cells[3].Value.ToString();
                 txtGoodsName.Text = dataGridView1.CurrentCell.OwningRow.Cells[4].Value.ToString();
-                txtGoodsNum.Text = dataGridView1.CurrentCell.OwningRow.Cells[5].Value.ToString();
+                numGoodsNum.Value = decimal.Parse(dataGridView1.CurrentCell.OwningRow.Cells[5].Value.ToString());
                 cmbGoodsUnit.Text = dataGridView1.CurrentCell.OwningRow.Cells[6].Value.ToString();
                 txtGoodsJHPrice.Text = dataGridView1.CurrentCell.OwningRow.Cells[7].Value.ToString();
                 txtSellGoodsPrice.Text = dataGridView1.CurrentCell.OwningRow.Cells[8].Value.ToString();
                 txtGoodsNeedPrice.Text = dataGridView1.CurrentCell.OwningRow.Cells[9].Value.ToString();
                 txtGoodsHasPay.Text = dataGridView1.CurrentCell.OwningRow.Cells[10].Value.ToString();
                 txtRemarks.Text = dataGridView1.CurrentCell.OwningRow.Cells[11].Value.ToString();
-                dateTimePicker1.Text = dataGridView1.CurrentCell.OwningRow.Cells[11].Value.ToString();
+                dateTimePicker1.Text = dataGridView1.CurrentCell.OwningRow.Cells[12].Value.ToString();
             }
         }
     }

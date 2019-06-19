@@ -23,7 +23,6 @@ namespace SupermarketManage
         /// </summary>
         private void ClearControls()
         {
-
             txtUserName.Text = "";
             txtUserPassword.Text = "";
             cboUserType.Text = "";
@@ -38,6 +37,15 @@ namespace SupermarketManage
             this.toolCancel.Enabled = !this.toolCancel.Enabled;
             this.toolAmend.Enabled = !this.toolAmend.Enabled;
             this.toolDelete.Enabled = !this.toolDelete.Enabled;
+            TextBoxStatus();
+        }
+        /// <summary>
+        /// 控制textbxo状态
+        /// </summary>
+        private void TextBoxStatus()
+        {
+            txtUserName.ReadOnly = !txtUserName.ReadOnly;
+            txtUserPassword.ReadOnly = !txtUserPassword.ReadOnly;
         }
         void DataBind()//定义一个函数用于绑定数据到DataGridView
         {
@@ -50,13 +58,13 @@ namespace SupermarketManage
         private void UserManage_Load(object sender, EventArgs e)//调用DataBind将数据传到dataGridView1中
         {
             DataBind();
-            
+            TextBoxStatus();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)//修改
         {
+            txtUserName.ReadOnly = false;
             ControlStatus();
-            txtUserName.ReadOnly = true;
             flag = 2;
         }
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)//点击dataGridView2将数据同步在txetbox中
@@ -99,7 +107,7 @@ namespace SupermarketManage
             {
                 case 0:
                     {
-
+                        
                     } break;
                 case 1:
                     {
@@ -114,6 +122,7 @@ namespace SupermarketManage
                         if (bll.Update(model))//根据返回布尔值判断是否修改数据成功
                         {
                             DataBind();//窗体登录时绑定数据到DataGridView
+                            txtUserName.ReadOnly = false;
                             ControlStatus();
                         }
                     } break;
@@ -130,9 +139,13 @@ namespace SupermarketManage
 
         private void toolCancel_Click(object sender, EventArgs e)
         {
+            if(flag == 2)
+            {
+                txtUserName.ReadOnly = false;
+            }
+            flag = 0;
             ClearControls();
             ControlStatus();
-            txtUserName.ReadOnly = false;
         }
 
         private void toolExit_Click(object sender, EventArgs e)
