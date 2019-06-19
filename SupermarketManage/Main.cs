@@ -199,5 +199,15 @@ namespace SupermarketManage
             }
             
         }
+
+        private void 商品销售ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.MdiChildren.Length == 0)
+            {
+                SellGoods kn = new SellGoods();
+                kn.MdiParent = this;
+                kn.Show();
+            }
+        }
     }
 }

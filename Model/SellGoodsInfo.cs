@@ -13,7 +13,7 @@ namespace Model
         string goodsName;
         string employeeID;
         int sellGoodsNum;
-        int sellGoodsTime;
+        DateTime sellGoodsTime;
         string sellPrice;
         string sellNeedPay;
         string sellHasPay;
@@ -50,7 +50,7 @@ namespace Model
              get { return sellGoodsNum;}
              set { sellGoodsNum = value; } 
          }
-        public int SellGoodsTime
+        public DateTime SellGoodsTime
         {
             get { return sellGoodsTime; }
             set { sellGoodsTime = value; }

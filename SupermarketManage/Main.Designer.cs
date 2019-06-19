@@ -159,13 +159,14 @@
             // 商品销售ToolStripMenuItem
             // 
             this.商品销售ToolStripMenuItem.Name = "商品销售ToolStripMenuItem";
-            this.商品销售ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.商品销售ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.商品销售ToolStripMenuItem.Text = "商品销售";
+            this.商品销售ToolStripMenuItem.Click += new System.EventHandler(this.商品销售ToolStripMenuItem_Click);
             // 
             // 商品退货ToolStripMenuItem
             // 
             this.商品退货ToolStripMenuItem.Name = "商品退货ToolStripMenuItem";
-            this.商品退货ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.商品退货ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.商品退货ToolStripMenuItem.Text = "商品退货";
             // 
             // 库存管理ToolStripMenuItem
@@ -180,14 +181,14 @@
             // 库存查询ToolStripMenuItem
             // 
             this.库存查询ToolStripMenuItem.Name = "库存查询ToolStripMenuItem";
-            this.库存查询ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.库存查询ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.库存查询ToolStripMenuItem.Text = "库存查询";
             this.库存查询ToolStripMenuItem.Click += new System.EventHandler(this.库存查询ToolStripMenuItem_Click);
             // 
             // 库存报警ToolStripMenuItem
             // 
             this.库存报警ToolStripMenuItem.Name = "库存报警ToolStripMenuItem";
-            this.库存报警ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.库存报警ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.库存报警ToolStripMenuItem.Text = "库存报警";
             this.库存报警ToolStripMenuItem.Click += new System.EventHandler(this.库存报警ToolStripMenuItem_Click);
             // 
@@ -420,7 +421,7 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "超市进销存管理系统";

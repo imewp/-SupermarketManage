@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DAL
 {
-    class SellGoodsInfo
+    public class SellGoodsInfo
     {
         /// <summary>
         /// 增加一条数据
@@ -60,15 +60,16 @@ namespace DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("update SellGoodsInfo set ");
-            strSql.Append("EmployeeName=@EmployeeName,");
-            strSql.Append("Sex=@Sex,");
-            strSql.Append("EmployeeBirthday=@EmployeeBirthday,");
-            strSql.Append("EmployeeDepartment=@EmployeeDepartment,");
-            strSql.Append("EmployeePost=@EmployeePost,");
-            strSql.Append("EmployeePhone=@EmployeePhone,");
-            strSql.Append("EmployeeEmail=@EmployeeEmail,");
-            strSql.Append("EmployeeAddress=@EmployeeAddress,");
-            strSql.Append("EmployeeFlag=@EmployeeFlag");
+            strSql.Append("KCID=@KCID,");
+            strSql.Append("GoodsID=@GoodsID,");
+            strSql.Append("EmployeeID=@EmployeeID,");
+            strSql.Append("GoodsName=@GoodsName,");
+            strSql.Append("SellGoodsNum=@SellGoodsNum,");
+            strSql.Append("SellGoodsTime=@SellGoodsTime,");
+            strSql.Append("SellPrice=@SellPrice,");
+            strSql.Append("SellNeedPay=@SellNeedPay,");
+            strSql.Append("SellHasPay=@SellHasPay,");
+            strSql.Append("SellRemark=@SellRemark");
             strSql.Append(" where SellID=@SellID ");
             SqlParameter[] parameters = {
 					new SqlParameter("@SellID", SqlDbType.NVarChar,50),
@@ -111,8 +112,8 @@ namespace DAL
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select EmployeeID as 员工编号,EmployeeName as 员工姓名,Sex as 性别,EmployeeBirthday as 出生日期,EmployeeDepartment as 所属部门,EmployeePost as 部门职位,EmployeePhone 联系电话,EmployeeEmail as 电子邮箱,EmployeeAddress 家庭住址");
-            strSql.Append(" FROM EmployeeInfo ");
+            strSql.Append("select SellID as 销售编号,KCID as 仓库编号,GoodsID as 商品编号,EmployeeID as 员工编号,GoodsName as 商品名称,SellGoodsNum as 销售数量,SellGoodsTime as 销售时间,SellPrice as 销售单价,SellNeedPay as 应付金额,SellHasPay as 实付金额,SellRemark as 备注");
+            strSql.Append(" FROM SellGoodsInfo ");
             if (strWhere.Trim() != "")
             {
                 strSql.Append(" where " + strWhere);
@@ -123,15 +124,15 @@ namespace DAL
         /// <summary>
         /// 删除一条数据
         /// </summary>
-        public bool Delete(Model.EmployeeInfo model)
+        public bool Delete(Model.SellGoodsInfo model)
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("delete from EmployeeInfo ");
-            strSql.Append(" where EmployeeID=@EmployeeID ");
+            strSql.Append("delete from SellGoodsInfo ");
+            strSql.Append(" where SellID=@SellID ");
             SqlParameter[] parameters = {
-					new SqlParameter("@EmployeeID", SqlDbType.NVarChar,50)			};
-            parameters[0].Value = model.EmployeeID;
+					new SqlParameter("@SellID", SqlDbType.NVarChar,50)			};
+            parameters[0].Value = model.SellID;
 
             int rows = DBHelper.ExecuteSql(strSql.ToString(), CommandType.Text, parameters);
             if (rows > 0)
@@ -150,8 +151,8 @@ namespace DAL
         public DataSet GetList()
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select EmployeeID as 员工编号,EmployeeName as 员工姓名,Sex as 性别,EmployeeBirthday as 出生日期,EmployeeDepartment as 所属部门,EmployeePost as 部门职位,EmployeePhone 联系电话,EmployeeEmail as 电子邮箱,EmployeeAddress 家庭住址 ");
-            strSql.Append(" FROM EmployeeInfo");
+            strSql.Append("select SellID as 销售编号,KCID as 仓库编号,GoodsID as 商品编号,EmployeeID as 员工编号,GoodsName as 商品名称,SellGoodsNum as 销售数量,SellGoodsTime as 销售时间,SellPrice as 销售单价,SellNeedPay as 应付金额,SellHasPay as 实付金额,SellRemark as 备注 ");
+            strSql.Append(" FROM SellGoodsInfo");
             return DBHelper.SelectToDS(strSql.ToString(), CommandType.Text);
         }
     }
