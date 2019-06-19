@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace SupermarketManage
 {
-    public partial class SellGoods : Form
+    public partial class ThGoodsInfo : Form
     {
-        public SellGoods()
+        public ThGoodsInfo()
         {
             InitializeComponent();
         }
@@ -46,17 +46,18 @@ namespace SupermarketManage
         /// </summary>
         private void ClearControls()
         {
-            txtSellID.Text = "";
+            txtThGoodsID.Text = "";
             txtKCID.Text = "";
             txtGoodsID.Text = "";
+            txtSellID.Text = "";
             txtEmpID.Text = "";
-            txtGoodsName.Text = "";
-            numSellGoodsNum.Value = 0;
-            this.DaSellGoodsTime.Value = DateTime.Now;
-            txtdeSellPrice.Text = "";
-            txtSellNeedPay.Text = "";
-            txtdeSellHasPay.Text = "";
-            txtSellRemark.Text = "";
+            txtThGoodsName.Text = "";
+            txThGoodsNum.Text = "";
+            daThGoodsTime.Value = DateTime.Now;
+            txtThGoodsPrice.Text = "";
+            txtThNeedPay.Text = "";
+            txtThHasPay.Text = "";
+            txtThGoodsResult.Text = "";
         }
         /// <summary>
         /// 控制控件状态
@@ -72,24 +73,26 @@ namespace SupermarketManage
 
         private void toolSave_Click(object sender, EventArgs e)
         {
-            if (txtSellID.Text == "" || txtKCID.Text == "" || txtGoodsID.Text == "" || txtEmpID.Text == "" || txtGoodsName.Text == "" || txtdeSellPrice.Text == "" || txtSellNeedPay.Text == "" || txtdeSellHasPay.Text == "" || txtSellRemark.Text == "")
+            if (txtThGoodsID.Text == "" || txtSellID.Text == "" || txtGoodsID.Text == "" || txtSellID.Text == "" || txtEmpID.Text == "" || txtThGoodsName.Text == "" || txThGoodsNum.Text == "" || txtThHasPay.Text == "" || txtThNeedPay.Text == "" || txtThGoodsResult.Text == "" || txtEmpID.Text == "" || txThGoodsNum.Text == "")
             {
                 MessageBox.Show("请将信息添加完整！");
                 return;
             }
-            Model.SellGoodsInfo model = new Model.SellGoodsInfo();//实例化model层
-            model.SellID = txtSellID.Text.Trim();
-            model.KcID = txtKCID.Text.Trim();
+            Model.THGoodsInfo model = new Model.THGoodsInfo();//实例化model层
+            model.THGoodsID = txtThGoodsID.Text.Trim();
+            model.KCID = txtKCID.Text.Trim();
             model.GoodsID = txtGoodsID.Text.Trim();
-            model.EmployeeID = txtEmpID.Text.Trim();
-            model.GoodsName = txtGoodsName.Text.Trim();
-            model.SellGoodsNum = int.Parse(numSellGoodsNum.Value.ToString());
-            model.SellGoodsTime = DateTime.Parse(this.DaSellGoodsTime.Text);
-            model.SellPrice = txtdeSellPrice.Text.Trim();
-            model.SellNeedPay = txtSellNeedPay.Text.Trim();
-            model.SellHasPay = txtdeSellHasPay.Text.Trim();
-            model.SellRemark = txtSellRemark.Text.Trim(); 
-            BLL.SellGoodsInfo bll = new BLL.SellGoodsInfo();//实例化BLL层
+            model.SellID = txtSellID.Text.Trim();
+            model.EmploayeeID = txtEmpID.Text.Trim();
+            model.THGoodsName = txtThGoodsName.Text.Trim();
+            model.THGoodsNum = int.Parse(txThGoodsNum.Text.Trim());
+            model.THGoodsTime = DateTime.Parse(daThGoodsTime.Value.ToString());
+            model.THGoodsPrice = float.Parse(txtThGoodsPrice.Text.Trim());
+            model.THNeedPay = float.Parse(txtThNeedPay.Text.Trim());
+            model.THHasPay = float.Parse(txtThHasPay.Text.Trim());
+            model.THGoodsResult = txtThGoodsResult.Text;
+
+            BLL.THGoodsInfo bll = new BLL.THGoodsInfo();//实例化BLL层
             switch (flag)
             {
                 case 0:
@@ -130,7 +133,7 @@ namespace SupermarketManage
         }
         public void DataBind()//定义一个函数用于绑定数据到DataGridView
         {
-            BLL.SellGoodsInfo bll = new BLL.SellGoodsInfo();
+            BLL.THGoodsInfo bll = new BLL.THGoodsInfo();
             DataSet ds = new DataSet();
             ds = bll.GetList();//执行SQL语句，将结果存在ds中
             dataGridView1.DataSource = ds.Tables[0];//将ds中的表作为DataGridView的数据源   
@@ -145,43 +148,18 @@ namespace SupermarketManage
         {
             if (flag == 2 || flag == 3)
             {
-                txtSellID.Text = dataGridView1.CurrentCell.OwningRow.Cells[0].Value.ToString();
+                txtThGoodsID.Text = dataGridView1.CurrentCell.OwningRow.Cells[0].Value.ToString();
                 txtKCID.Text = dataGridView1.CurrentCell.OwningRow.Cells[1].Value.ToString();
                 txtGoodsID.Text = dataGridView1.CurrentCell.OwningRow.Cells[2].Value.ToString();
-                txtEmpID.Text = dataGridView1.CurrentCell.OwningRow.Cells[3].Value.ToString();
-                txtGoodsName.Text = dataGridView1.CurrentCell.OwningRow.Cells[4].Value.ToString();
-                numSellGoodsNum.Value = decimal.Parse(dataGridView1.CurrentCell.OwningRow.Cells[5].Value.ToString());
-                DaSellGoodsTime.Text = dataGridView1.CurrentCell.OwningRow.Cells[6].Value.ToString();
-                txtdeSellPrice.Text = dataGridView1.CurrentCell.OwningRow.Cells[7].Value.ToString();
-                txtSellNeedPay.Text = dataGridView1.CurrentCell.OwningRow.Cells[8].Value.ToString();
-                txtdeSellHasPay.Text = dataGridView1.CurrentCell.OwningRow.Cells[9].Value.ToString();
-                txtSellRemark.Text = dataGridView1.CurrentCell.OwningRow.Cells[10].Value.ToString();
-            }
-        }
-
-        private void txtdeSellPrice_TextChanged(object sender, EventArgs e)
-        {
-            if (txtdeSellPrice.Text == "0")
-                return;
-            float price = float.Parse(txtdeSellPrice.Text.Trim());
-            float num = float.Parse(numSellGoodsNum.Value.ToString());
-            if (txtdeSellPrice.Text.Trim() != "")
-            {
-                float sum = price * num;
-                txtSellNeedPay.Text = sum.ToString();
-            }
-        }
-
-        private void numSellGoodsNum_ValueChanged(object sender, EventArgs e)
-        {
-            if (txtdeSellPrice.Text == "0")
-                return;
-            float price = float.Parse(txtdeSellPrice.Text.Trim());
-            float num = float.Parse(numSellGoodsNum.Value.ToString());
-            if (txtdeSellPrice.Text.Trim() != "")
-            {
-                float sum = price * num;
-                txtSellNeedPay.Text = sum.ToString();
+                txtSellID.Text = dataGridView1.CurrentCell.OwningRow.Cells[3].Value.ToString();
+                txtEmpID.Text = dataGridView1.CurrentCell.OwningRow.Cells[4].Value.ToString();
+                txtThGoodsName.Text = dataGridView1.CurrentCell.OwningRow.Cells[5].Value.ToString();
+                txThGoodsNum.Text = dataGridView1.CurrentCell.OwningRow.Cells[6].Value.ToString();
+                daThGoodsTime.Text = dataGridView1.CurrentCell.OwningRow.Cells[7].Value.ToString();
+                txtThGoodsPrice.Text = dataGridView1.CurrentCell.OwningRow.Cells[8].Value.ToString();
+                txtThNeedPay.Text = dataGridView1.CurrentCell.OwningRow.Cells[9].Value.ToString();
+                txtThHasPay.Text = dataGridView1.CurrentCell.OwningRow.Cells[10].Value.ToString();
+                txtThGoodsResult.Text = dataGridView1.CurrentCell.OwningRow.Cells[11].Value.ToString();
             }
         }
     }

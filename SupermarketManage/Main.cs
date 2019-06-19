@@ -213,7 +213,12 @@ namespace SupermarketManage
 
         private void 商品退货ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (this.MdiChildren.Length == 0)
+            {
+                ThGoodsInfo sg = new ThGoodsInfo();
+                sg.MdiParent = this;
+                sg.Show();
+            }
         }
     }
 }

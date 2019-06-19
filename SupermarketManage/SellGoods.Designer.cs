@@ -162,6 +162,7 @@
             this.txtdeSellPrice.Name = "txtdeSellPrice";
             this.txtdeSellPrice.Size = new System.Drawing.Size(120, 21);
             this.txtdeSellPrice.TabIndex = 85;
+            this.txtdeSellPrice.TextChanged += new System.EventHandler(this.txtdeSellPrice_TextChanged);
             // 
             // txtEmpID
             // 
@@ -184,6 +185,7 @@
             this.txtSellNeedPay.Name = "txtSellNeedPay";
             this.txtSellNeedPay.Size = new System.Drawing.Size(144, 21);
             this.txtSellNeedPay.TabIndex = 82;
+            this.txtSellNeedPay.Text = "0";
             // 
             // txtdeSellHasPay
             // 
@@ -336,6 +338,7 @@
             this.numSellGoodsNum.Name = "numSellGoodsNum";
             this.numSellGoodsNum.Size = new System.Drawing.Size(119, 21);
             this.numSellGoodsNum.TabIndex = 87;
+            this.numSellGoodsNum.ValueChanged += new System.EventHandler(this.numSellGoodsNum_ValueChanged);
             // 
             // SellGoods
             // 
@@ -367,6 +370,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "SellGoods";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "商品销售";
             this.Load += new System.EventHandler(this.Employee_Load);
             this.toolStrip1.ResumeLayout(false);
