@@ -43,7 +43,7 @@ namespace SupermarketManage
                     break;
                 case "商品名称":
                     {
-                        strWhere = strWhere + " and GoodsName = '%" + goodsName + "%'";
+                        strWhere = strWhere + " and GoodsName like '%" + goodsName + "%'";
                     }
                     break;
             }
