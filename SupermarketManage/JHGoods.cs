@@ -167,5 +167,18 @@ namespace SupermarketManage
                 dateTimePicker1.Text = dataGridView1.CurrentCell.OwningRow.Cells[12].Value.ToString();
             }
         }
+
+        private void txtGoodsJHPrice_TextChanged(object sender, EventArgs e)
+        {
+            if (txtGoodsJHPrice.Text == "0")
+                return;
+            float price = float.Parse(txtGoodsJHPrice.Text.Trim());
+            float num = float.Parse(numGoodsNum.Value.ToString());
+            if (txtGoodsJHPrice.Text.Trim() != "")
+            {
+                float sum = price * num;
+                txtGoodsNeedPrice.Text = sum.ToString();
+            }
+        }
     }
 }
