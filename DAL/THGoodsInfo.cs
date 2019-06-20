@@ -120,7 +120,8 @@ namespace DAL
             strSql.Append("delete from THGoodsInfo ");
             strSql.Append(" where THGoodsID=@THGoodsID ");
             SqlParameter[] parameters = {
-					new SqlParameter("@THGoodsID", SqlDbType.NVarChar,50)			};
+					new SqlParameter("@THGoodsID", SqlDbType.NVarChar,50)
+                                        };
             parameters[0].Value = model.GoodsID;
 
             int rows = DBHelper.ExecuteSql(strSql.ToString(), CommandType.Text, parameters);

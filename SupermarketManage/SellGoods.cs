@@ -68,18 +68,18 @@ namespace SupermarketManage
             }
             Model.SellGoodsInfo model = new Model.SellGoodsInfo();//实例化model层
             model.SellID = txtSellID.Text.Trim();
-            model.KcID = txtDepotName.Text.Trim();
             model.GoodsID = txtGoodsID.Text.Trim();
-            model.EmployeeID = txtDepotName.Text.Trim();
-            model.GoodsName = txtGoodsName.Text.Trim();
+            model.EmployeeID = cboEmpID.Text.Trim();
+            model.CompanyName = txtCompanyName.Text.Trim();
+            model.DepotName = txtDepotName.Text.Trim();
+            model.GoodsName = txtGoodsName.Text.Trim();     
             model.SellGoodsNum = int.Parse(numSellGoodsNum.Value.ToString());
             model.SellGoodsTime = DateTime.Parse(this.DaSellGoodsTime.Text);
-            model.SellPrice = txtdeSellPrice.Text.Trim();
+            model.SellGoodsPrice = txtdeSellPrice.Text.Trim();
             model.SellNeedPay = txtSellNeedPay.Text.Trim();
             model.SellHasPay = txtdeSellHasPay.Text.Trim();
             model.SellRemark = txtSellRemark.Text.Trim(); 
             BLL.SellGoodsInfo bll = new BLL.SellGoodsInfo();//实例化BLL层
-
             Model.KCInfo kcInfo = new Model.KCInfo();
             kcInfo.GoodsID = txtGoodsID.Text.Trim();
             kcInfo.GoodsName = txtGoodsName.Text;
@@ -148,11 +148,15 @@ namespace SupermarketManage
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtDepotName.Text = dataGridView1.CurrentCell.OwningRow.Cells[3].Value.ToString();
-            txtCompanyName.Text = dataGridView1.CurrentCell.OwningRow.Cells[2].Value.ToString();
-            txtGoodsName.Text = dataGridView1.CurrentCell.OwningRow.Cells[4].Value.ToString();
-            txtGoodsID.Text = dataGridView1.CurrentCell.OwningRow.Cells[0].Value.ToString();
-            txtdeSellPrice.Text = dataGridView1.CurrentCell.OwningRow.Cells[8].Value.ToString();
+            if(flag==1)
+            {
+                txtDepotName.Text = dataGridView1.CurrentCell.OwningRow.Cells[3].Value.ToString();
+                txtCompanyName.Text = dataGridView1.CurrentCell.OwningRow.Cells[2].Value.ToString();
+                txtGoodsName.Text = dataGridView1.CurrentCell.OwningRow.Cells[4].Value.ToString();
+                txtGoodsID.Text = dataGridView1.CurrentCell.OwningRow.Cells[0].Value.ToString();
+                txtdeSellPrice.Text = dataGridView1.CurrentCell.OwningRow.Cells[8].Value.ToString();
+            }
+         
         }
 
         private void numSellGoodsNum_ValueChanged(object sender, EventArgs e)

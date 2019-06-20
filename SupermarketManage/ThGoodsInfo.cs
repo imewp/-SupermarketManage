@@ -15,30 +15,18 @@ namespace SupermarketManage
         {
             InitializeComponent();
         }
-        int flag = 0;//标记   //1.添加  2.修改 3.删除 
+        int flag = 0;//标记   //1.添加  
         private void toolAdd_Click(object sender, EventArgs e)
         {
             ClearControls();
             ControlStatus();
             flag = 1;
         }
-        private void toolDelete_Click(object sender, EventArgs e)
-        {
-            ControlStatus();
-            flag = 3;
-        }
-        private void toolAmend_Click(object sender, EventArgs e)
-        {
-            ControlStatus();
-            txtSellID.ReadOnly = true;
-            flag = 2;
-        }
 
         private void toolCancel_Click(object sender, EventArgs e)
         {
             ClearControls();
             ControlStatus();
-            txtSellID.ReadOnly = false;
         }
 
         /// <summary>
@@ -47,12 +35,12 @@ namespace SupermarketManage
         private void ClearControls()
         {
             txtThGoodsID.Text = "";
-            txtKCID.Text = "";
+            txtDepotName.Text = "";
             txtGoodsID.Text = "";
             txtSellID.Text = "";
-            txtEmpID.Text = "";
+            cboEmpID.Text = "";
             txtThGoodsName.Text = "";
-            txThGoodsNum.Text = "";
+            numSellGoodsNum.Text = "";
             daThGoodsTime.Value = DateTime.Now;
             txtThGoodsPrice.Text = "";
             txtThNeedPay.Text = "";
@@ -67,25 +55,23 @@ namespace SupermarketManage
             this.toolSave.Enabled = !this.toolSave.Enabled;
             this.toolAdd.Enabled = !this.toolAdd.Enabled;
             this.toolCancel.Enabled = !this.toolCancel.Enabled;
-            this.toolAmend.Enabled = !this.toolAmend.Enabled;
-            this.toolDelete.Enabled = !this.toolDelete.Enabled;
         }
 
         private void toolSave_Click(object sender, EventArgs e)
         {
-            if (txtThGoodsID.Text == "" || txtSellID.Text == "" || txtGoodsID.Text == "" || txtSellID.Text == "" || txtEmpID.Text == "" || txtThGoodsName.Text == "" || txThGoodsNum.Text == "" || txtThHasPay.Text == "" || txtThNeedPay.Text == "" || txtThGoodsResult.Text == "" || txtEmpID.Text == "" || txThGoodsNum.Text == "")
+            if (txtThGoodsID.Text == "" || txtSellID.Text == "" || txtGoodsID.Text == "" || txtSellID.Text == "" || txtThGoodsName.Text == "" || numSellGoodsNum.Text == "" || txtThHasPay.Text == "" || txtThNeedPay.Text == "" || cboEmpID.Text == "")
             {
                 MessageBox.Show("请将信息添加完整！");
                 return;
             }
             Model.THGoodsInfo model = new Model.THGoodsInfo();//实例化model层
             model.THGoodsID = txtThGoodsID.Text.Trim();
-            model.KCID = txtKCID.Text.Trim();
+            model.KCID = "";
             model.GoodsID = txtGoodsID.Text.Trim();
             model.SellID = txtSellID.Text.Trim();
-            model.EmploayeeID = txtEmpID.Text.Trim();
+            model.EmploayeeID = cboEmpID.Text.Trim();
             model.THGoodsName = txtThGoodsName.Text.Trim();
-            model.THGoodsNum = int.Parse(txThGoodsNum.Text.Trim());
+            model.THGoodsNum = int.Parse(numSellGoodsNum.Text.Trim());
             model.THGoodsTime = DateTime.Parse(daThGoodsTime.Value.ToString());
             model.THGoodsPrice = float.Parse(txtThGoodsPrice.Text.Trim());
             model.THNeedPay = float.Parse(txtThNeedPay.Text.Trim());
@@ -93,6 +79,18 @@ namespace SupermarketManage
             model.THGoodsResult = txtThGoodsResult.Text;
 
             BLL.THGoodsInfo bll = new BLL.THGoodsInfo();//实例化BLL层
+
+            Model.KCInfo kcInfo = new Model.KCInfo();
+            kcInfo.GoodsID = txtGoodsID.Text.Trim();
+            kcInfo.GoodsName = txtThGoodsName.Text.Trim();
+            kcInfo.DepotName = txtDepotName.Text.Trim();
+            kcInfo.CompanyName = txtCompanyName.Text.Trim();
+            string strWhere = " GoodsID = '" + kcInfo.GoodsID + "'";
+            BLL.KCInfo bllkcInfo = new BLL.KCInfo();//实例化BLL层
+            DataSet ds = new DataSet();
+            ds = bllkcInfo.GetList(strWhere);
+            int sum = int.Parse(ds.Tables[0].Rows[0]["商品数量"].ToString());
+            kcInfo.GoodsNum = sum + int.Parse(numSellGoodsNum.Value.ToString());
             switch (flag)
             {
                 case 0:
@@ -106,22 +104,8 @@ namespace SupermarketManage
                             DataBind();//窗体登录时绑定数据到DataGridView
                             ControlStatus();
                         }
-                    } break;
-                case 2:
-                    {
-                        if (bll.Update(model))//根据返回布尔值判断是否修改数据成功
-                        {
-                            DataBind();//窗体登录时绑定数据到DataGridView
-                            ControlStatus();
-                        }
-                    } break;
-                case 3:
-                    {
-                        if (bll.Delete(model))//根据返回布尔值判断是否删除数据成功
-                        {
-                            DataBind();//窗体登录时绑定数据到DataGridView
-                            ControlStatus();
-                        }
+                        if (!bllkcInfo.Update(kcInfo))
+                            MessageBox.Show("未能够把数据添加到仓库中");
                     } break;
             }
         }
@@ -133,7 +117,7 @@ namespace SupermarketManage
         }
         public void DataBind()//定义一个函数用于绑定数据到DataGridView
         {
-            BLL.THGoodsInfo bll = new BLL.THGoodsInfo();
+            BLL.SellGoodsInfo bll = new BLL.SellGoodsInfo();
             DataSet ds = new DataSet();
             ds = bll.GetList();//执行SQL语句，将结果存在ds中
             dataGridView1.DataSource = ds.Tables[0];//将ds中的表作为DataGridView的数据源   
@@ -142,24 +126,43 @@ namespace SupermarketManage
         private void Employee_Load(object sender, EventArgs e)
         {
             DataBind();//窗体登录时绑定数据到DataGridView
+            BLL.Employee bll = new BLL.Employee();
+            DataSet ds = new DataSet();
+            ds = bll.GetList();//执行SQL语句，将结果存在ds中
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                string[] array = new string[ds.Tables[0].Rows.Count];
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    array[i] = ds.Tables[0].Rows[i]["员工编号"].ToString();
+                    cboEmpID.Items.Add(array[i]);
+                }
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (flag == 2 || flag == 3)
+            if (flag == 1 )
             {
-                txtThGoodsID.Text = dataGridView1.CurrentCell.OwningRow.Cells[0].Value.ToString();
-                txtKCID.Text = dataGridView1.CurrentCell.OwningRow.Cells[1].Value.ToString();
-                txtGoodsID.Text = dataGridView1.CurrentCell.OwningRow.Cells[2].Value.ToString();
-                txtSellID.Text = dataGridView1.CurrentCell.OwningRow.Cells[3].Value.ToString();
-                txtEmpID.Text = dataGridView1.CurrentCell.OwningRow.Cells[4].Value.ToString();
+                txtDepotName.Text = dataGridView1.CurrentCell.OwningRow.Cells[4].Value.ToString();
+                txtSellID.Text = dataGridView1.CurrentCell.OwningRow.Cells[0].Value.ToString();
+                txtGoodsID.Text = dataGridView1.CurrentCell.OwningRow.Cells[1].Value.ToString();
                 txtThGoodsName.Text = dataGridView1.CurrentCell.OwningRow.Cells[5].Value.ToString();
-                txThGoodsNum.Text = dataGridView1.CurrentCell.OwningRow.Cells[6].Value.ToString();
-                daThGoodsTime.Text = dataGridView1.CurrentCell.OwningRow.Cells[7].Value.ToString();
                 txtThGoodsPrice.Text = dataGridView1.CurrentCell.OwningRow.Cells[8].Value.ToString();
-                txtThNeedPay.Text = dataGridView1.CurrentCell.OwningRow.Cells[9].Value.ToString();
-                txtThHasPay.Text = dataGridView1.CurrentCell.OwningRow.Cells[10].Value.ToString();
-                txtThGoodsResult.Text = dataGridView1.CurrentCell.OwningRow.Cells[11].Value.ToString();
+                txtCompanyName.Text = dataGridView1.CurrentCell.OwningRow.Cells[3].Value.ToString();
+            }
+        }
+
+        private void numSellGoodsNum_ValueChanged(object sender, EventArgs e)
+        {
+            if (txtThGoodsPrice.Text == "0")
+                return;
+            float price = float.Parse(txtThGoodsPrice.Text.Trim());
+            float num = float.Parse(numSellGoodsNum.Value.ToString());
+            if (txtThGoodsPrice.Text.Trim() != "")
+            {
+                float sum = price * num;
+                txtThHasPay.Text = sum.ToString();
             }
         }
     }

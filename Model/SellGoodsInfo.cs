@@ -8,43 +8,49 @@ namespace Model
     public class SellGoodsInfo
     {
         string sellID;
-        string kcID;
         string goodsID;
-        string goodsName;
         string employeeID;
+        string companyName;
+        string depotName;
+        string goodsName;
         int sellGoodsNum;
         DateTime sellGoodsTime;
-        string sellPrice;
+        string sellGoodsPrice;
         string sellNeedPay;
         string sellHasPay;
         string sellRemark;
-        int sellFlag;
+        int flag;
 
         public string SellID
         {
             get { return sellID;}
             set { sellID = value;}
         }
-        public string KcID
-        {
-            get { return kcID;}
-            set { kcID = value;}
-        }
         public string GoodsID
         {
-            get { return goodsID;}
-            set { goodsID = value;}
+            get { return goodsID; }
+            set { goodsID = value; }
+        }
+        public string EmployeeID
+        {
+            get { return employeeID; }
+            set { employeeID = value; }
+        }
+        public string CompanyName
+        {
+            get { return companyName; }
+            set { companyName = value; }
+        }
+        public string DepotName
+        {
+            get { return depotName; }
+            set { depotName = value; }
         }
         public string GoodsName
         {
             get { return goodsName;}
             set { goodsName = value;}
         }
-         public string EmployeeID
-            {
-                get { return employeeID;}
-                set { employeeID = value;}
-            }
         public int SellGoodsNum
          {
              get { return sellGoodsNum;}
@@ -55,10 +61,10 @@ namespace Model
             get { return sellGoodsTime; }
             set { sellGoodsTime = value; }
         }
-        public string SellPrice
+        public string SellGoodsPrice
         {
-            get { return sellPrice;}
-            set { sellPrice = value;}
+            get { return sellGoodsPrice; }
+            set { sellGoodsPrice = value; }
         }
         public string SellNeedPay
         {
@@ -75,10 +81,10 @@ namespace Model
             get { return sellRemark;}
             set { sellRemark = value; }
         }
-        public int SellFlag
+        public int Flag
         {
-            get { return sellFlag;}
-            set { sellFlag = value;}
+            get { return flag;}
+            set { flag = value; }
         }
     }  
 }
