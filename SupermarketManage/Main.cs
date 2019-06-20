@@ -241,5 +241,25 @@ namespace SupermarketManage
                 dr.Show();
             }
         }
+
+        private void tsbtnCheckOut_Click(object sender, EventArgs e)
+        {
+            if (this.MdiChildren.Length == 0)
+            {
+                ThGoodsInfo th = new ThGoodsInfo();
+                th.MdiParent = this;
+                th.Show();
+            }
+        }
+
+        private void tsbtnUser_Click(object sender, EventArgs e)
+        {
+            if (this.MdiChildren.Length == 0)
+            {
+                DataBackup back = new DataBackup();
+                back.MdiParent = this;
+                back.Show();
+            }
+        }
     }
 }

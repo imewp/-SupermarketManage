@@ -33,14 +33,14 @@
             this.lblAlarm = new System.Windows.Forms.Label();
             this.txtid = new System.Windows.Forms.TextBox();
             this.lblGoodsID = new System.Windows.Forms.Label();
-            this.txtGoodsSellPrice = new System.Windows.Forms.TextBox();
+            this.txtDepotName = new System.Windows.Forms.TextBox();
             this.txtGoodsNum = new System.Windows.Forms.TextBox();
             this.txtGoodsName = new System.Windows.Forms.TextBox();
-            this.txtGoodsJhPrice = new System.Windows.Forms.TextBox();
-            this.lblSellPrice = new System.Windows.Forms.Label();
+            this.txtCompanyName = new System.Windows.Forms.TextBox();
+            this.lblDepotName = new System.Windows.Forms.Label();
             this.lblJHNum = new System.Windows.Forms.Label();
             this.lblGoodsName = new System.Windows.Forms.Label();
-            this.lblJHPrice = new System.Windows.Forms.Label();
+            this.lblCompanyName = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -57,7 +57,7 @@
             // 
             // txtAlarmNum
             // 
-            this.txtAlarmNum.Location = new System.Drawing.Point(370, 96);
+            this.txtAlarmNum.Location = new System.Drawing.Point(340, 93);
             this.txtAlarmNum.MaxLength = 10;
             this.txtAlarmNum.Name = "txtAlarmNum";
             this.txtAlarmNum.Size = new System.Drawing.Size(154, 21);
@@ -66,7 +66,7 @@
             // lblAlarm
             // 
             this.lblAlarm.AutoSize = true;
-            this.lblAlarm.Location = new System.Drawing.Point(299, 99);
+            this.lblAlarm.Location = new System.Drawing.Point(279, 96);
             this.lblAlarm.Name = "lblAlarm";
             this.lblAlarm.Size = new System.Drawing.Size(65, 12);
             this.lblAlarm.TabIndex = 90;
@@ -75,92 +75,97 @@
             // txtid
             // 
             this.txtid.Enabled = false;
-            this.txtid.Location = new System.Drawing.Point(84, 12);
+            this.txtid.Location = new System.Drawing.Point(96, 12);
             this.txtid.MaxLength = 20;
             this.txtid.Name = "txtid";
+            this.txtid.ReadOnly = true;
             this.txtid.Size = new System.Drawing.Size(156, 21);
             this.txtid.TabIndex = 89;
             // 
             // lblGoodsID
             // 
             this.lblGoodsID.AutoSize = true;
-            this.lblGoodsID.Location = new System.Drawing.Point(13, 15);
+            this.lblGoodsID.Location = new System.Drawing.Point(37, 15);
             this.lblGoodsID.Name = "lblGoodsID";
             this.lblGoodsID.Size = new System.Drawing.Size(65, 12);
             this.lblGoodsID.TabIndex = 88;
             this.lblGoodsID.Text = "商品编号：";
             // 
-            // txtGoodsSellPrice
+            // txtDepotName
             // 
-            this.txtGoodsSellPrice.Enabled = false;
-            this.txtGoodsSellPrice.Location = new System.Drawing.Point(370, 56);
-            this.txtGoodsSellPrice.MaxLength = 10;
-            this.txtGoodsSellPrice.Name = "txtGoodsSellPrice";
-            this.txtGoodsSellPrice.Size = new System.Drawing.Size(154, 21);
-            this.txtGoodsSellPrice.TabIndex = 87;
+            this.txtDepotName.Enabled = false;
+            this.txtDepotName.Location = new System.Drawing.Point(340, 53);
+            this.txtDepotName.MaxLength = 10;
+            this.txtDepotName.Name = "txtDepotName";
+            this.txtDepotName.ReadOnly = true;
+            this.txtDepotName.Size = new System.Drawing.Size(154, 21);
+            this.txtDepotName.TabIndex = 87;
             // 
             // txtGoodsNum
             // 
             this.txtGoodsNum.Enabled = false;
-            this.txtGoodsNum.Location = new System.Drawing.Point(84, 96);
+            this.txtGoodsNum.Location = new System.Drawing.Point(96, 93);
             this.txtGoodsNum.MaxLength = 10;
             this.txtGoodsNum.Name = "txtGoodsNum";
+            this.txtGoodsNum.ReadOnly = true;
             this.txtGoodsNum.Size = new System.Drawing.Size(156, 21);
             this.txtGoodsNum.TabIndex = 86;
             // 
             // txtGoodsName
             // 
             this.txtGoodsName.Enabled = false;
-            this.txtGoodsName.Location = new System.Drawing.Point(370, 12);
+            this.txtGoodsName.Location = new System.Drawing.Point(340, 12);
             this.txtGoodsName.MaxLength = 20;
             this.txtGoodsName.Name = "txtGoodsName";
+            this.txtGoodsName.ReadOnly = true;
             this.txtGoodsName.Size = new System.Drawing.Size(154, 21);
             this.txtGoodsName.TabIndex = 85;
             // 
-            // txtGoodsJhPrice
+            // txtCompanyName
             // 
-            this.txtGoodsJhPrice.Enabled = false;
-            this.txtGoodsJhPrice.Location = new System.Drawing.Point(84, 56);
-            this.txtGoodsJhPrice.MaxLength = 10;
-            this.txtGoodsJhPrice.Name = "txtGoodsJhPrice";
-            this.txtGoodsJhPrice.Size = new System.Drawing.Size(156, 21);
-            this.txtGoodsJhPrice.TabIndex = 84;
+            this.txtCompanyName.Enabled = false;
+            this.txtCompanyName.Location = new System.Drawing.Point(96, 53);
+            this.txtCompanyName.MaxLength = 10;
+            this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.ReadOnly = true;
+            this.txtCompanyName.Size = new System.Drawing.Size(156, 21);
+            this.txtCompanyName.TabIndex = 84;
             // 
-            // lblSellPrice
+            // lblDepotName
             // 
-            this.lblSellPrice.AutoSize = true;
-            this.lblSellPrice.Location = new System.Drawing.Point(299, 59);
-            this.lblSellPrice.Name = "lblSellPrice";
-            this.lblSellPrice.Size = new System.Drawing.Size(65, 12);
-            this.lblSellPrice.TabIndex = 83;
-            this.lblSellPrice.Text = "销售单价：";
+            this.lblDepotName.AutoSize = true;
+            this.lblDepotName.Location = new System.Drawing.Point(279, 56);
+            this.lblDepotName.Name = "lblDepotName";
+            this.lblDepotName.Size = new System.Drawing.Size(65, 12);
+            this.lblDepotName.TabIndex = 83;
+            this.lblDepotName.Text = "仓库名称：";
             // 
             // lblJHNum
             // 
             this.lblJHNum.AutoSize = true;
-            this.lblJHNum.Location = new System.Drawing.Point(16, 99);
+            this.lblJHNum.Location = new System.Drawing.Point(37, 96);
             this.lblJHNum.Name = "lblJHNum";
             this.lblJHNum.Size = new System.Drawing.Size(65, 12);
             this.lblJHNum.TabIndex = 82;
-            this.lblJHNum.Text = "进货数量：";
+            this.lblJHNum.Text = "库存数量：";
             // 
             // lblGoodsName
             // 
             this.lblGoodsName.AutoSize = true;
-            this.lblGoodsName.Location = new System.Drawing.Point(299, 16);
+            this.lblGoodsName.Location = new System.Drawing.Point(279, 16);
             this.lblGoodsName.Name = "lblGoodsName";
             this.lblGoodsName.Size = new System.Drawing.Size(65, 12);
             this.lblGoodsName.TabIndex = 81;
             this.lblGoodsName.Text = "商品名称：";
             // 
-            // lblJHPrice
+            // lblCompanyName
             // 
-            this.lblJHPrice.AutoSize = true;
-            this.lblJHPrice.Location = new System.Drawing.Point(13, 59);
-            this.lblJHPrice.Name = "lblJHPrice";
-            this.lblJHPrice.Size = new System.Drawing.Size(65, 12);
-            this.lblJHPrice.TabIndex = 80;
-            this.lblJHPrice.Text = "进货单价：";
+            this.lblCompanyName.AutoSize = true;
+            this.lblCompanyName.Location = new System.Drawing.Point(25, 56);
+            this.lblCompanyName.Name = "lblCompanyName";
+            this.lblCompanyName.Size = new System.Drawing.Size(77, 12);
+            this.lblCompanyName.TabIndex = 80;
+            this.lblCompanyName.Text = "供应商名称：";
             // 
             // dataGridView1
             // 
@@ -171,6 +176,7 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(509, 150);
             this.dataGridView1.TabIndex = 79;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // btnAdd
             // 
@@ -191,19 +197,20 @@
             this.Controls.Add(this.lblAlarm);
             this.Controls.Add(this.txtid);
             this.Controls.Add(this.lblGoodsID);
-            this.Controls.Add(this.txtGoodsSellPrice);
+            this.Controls.Add(this.txtDepotName);
             this.Controls.Add(this.txtGoodsNum);
             this.Controls.Add(this.txtGoodsName);
-            this.Controls.Add(this.txtGoodsJhPrice);
-            this.Controls.Add(this.lblSellPrice);
+            this.Controls.Add(this.txtCompanyName);
+            this.Controls.Add(this.lblDepotName);
             this.Controls.Add(this.lblJHNum);
             this.Controls.Add(this.lblGoodsName);
-            this.Controls.Add(this.lblJHPrice);
+            this.Controls.Add(this.lblCompanyName);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnAdd);
             this.Name = "KCAlarmNum";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "库存报警";
+            this.Load += new System.EventHandler(this.KCAlarmNum_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -217,14 +224,14 @@
         private System.Windows.Forms.Label lblAlarm;
         private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Label lblGoodsID;
-        private System.Windows.Forms.TextBox txtGoodsSellPrice;
+        private System.Windows.Forms.TextBox txtDepotName;
         private System.Windows.Forms.TextBox txtGoodsNum;
         private System.Windows.Forms.TextBox txtGoodsName;
-        private System.Windows.Forms.TextBox txtGoodsJhPrice;
-        private System.Windows.Forms.Label lblSellPrice;
+        private System.Windows.Forms.TextBox txtCompanyName;
+        private System.Windows.Forms.Label lblDepotName;
         private System.Windows.Forms.Label lblJHNum;
         private System.Windows.Forms.Label lblGoodsName;
-        private System.Windows.Forms.Label lblJHPrice;
+        private System.Windows.Forms.Label lblCompanyName;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnAdd;
     }
