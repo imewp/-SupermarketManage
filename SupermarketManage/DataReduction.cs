@@ -66,7 +66,7 @@ namespace SupermarketManage
 
                 SqlConnection sqlcon = new SqlConnection(DateStr);
                 sqlcon.Open();
-                SqlCommand sqlCmd = new SqlCommand("backup log SUPERMARKET to disk='" + txtPath.Text.Trim() + "' restore database SUPERMARKET  from disk='" + txtPath.Text.Trim() + "'", sqlcon);
+                SqlCommand sqlCmd = new SqlCommand("backup log SUPERMARKET to disk='" + txtPath.Text.Trim() + "' restore database SUPERMARKET  from disk='" + txtPath.Text.Trim() + "' WITH REPLACE", sqlcon);
                 sqlCmd.ExecuteNonQuery();
                 sqlCmd.Dispose();
                 sqlcon.Close();
