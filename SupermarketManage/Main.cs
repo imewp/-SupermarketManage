@@ -231,5 +231,15 @@ namespace SupermarketManage
             }
             
         }
+
+        private void 数据还原ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.MdiChildren.Length == 0)
+            {
+                DataReduction dr = new DataReduction();
+                dr.MdiParent = this;
+                dr.Show();
+            }
+        }
     }
 }

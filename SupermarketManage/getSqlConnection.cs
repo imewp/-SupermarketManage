@@ -8,7 +8,7 @@ namespace SupermarketManage
 {
     class getSqlConnection
     {
-        string sql = @"Data Source=WP521\WANGPENG;Initial Catalog=C:\USERS\DELL\SOURCE\REPOS\SUPERMARKETMANAGE\DATA\SUPERMARKET.MDF;Integrated Security=True";
+        string sql = @"Data Source=WP521\WANGPENG;Initial Catalog=SUPERMARKET;Integrated Security=True";
         SqlConnection conn = null;
         public SqlConnection GetCon()
         {
