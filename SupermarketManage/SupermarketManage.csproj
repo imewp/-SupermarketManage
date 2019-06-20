@@ -60,6 +60,12 @@
     <Compile Include="DataBackup.Designer.cs">
       <DependentUpon>DataBackup.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataReduction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataReduction.Designer.cs">
+      <DependentUpon>DataReduction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataBackup.resx">
       <DependentUpon>DataBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataReduction.resx">
+      <DependentUpon>DataReduction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
