@@ -37,5 +37,26 @@ namespace SupermarketManage
         {
             DataBind();//窗体登录时绑定数据到DataGridView
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Model.KCInfo model = new Model.KCInfo();
+            model.GoodsID = txtid.Text.Trim();
+            model.GoodsName = txtGoodsName.Text.Trim();
+            model.CompanyName = txtCompanyName.Text.Trim();
+            model.DepotName = txtDepotName.Text.Trim();
+            model.GoodsNum = int.Parse(txtGoodsNum.Text.Trim());
+            model.AlarmNum = int.Parse(txtAlarmNum.Text.Trim());
+            BLL.KCInfo bll = new BLL.KCInfo();
+            if (bll.Update(model))//将员工信息添加到数据库中，根据返回值判断是否添加成功
+            {
+                DataBind();//窗体登录时绑定数据到DataGridView
+            }
+        }
     }
 }

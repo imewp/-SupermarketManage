@@ -40,6 +40,7 @@ namespace SupermarketManage
             ClearControls();
             ControlStatus();
             txtEmployeeID.ReadOnly = false;
+            flag = 0;
         }
 
         /// <summary>
