@@ -31,7 +31,7 @@ namespace SupermarketManage
             {
                 if (txtPath.Text != "")
                 {
-                    getSqlConnection geCon = new getSqlConnection();
+                    BLL.DataConn geCon = new BLL.DataConn();
                     SqlConnection con = geCon.GetCon();
                     string strBacl = "backup database SUPERMARKET to disk='" + txtPath.Text.Trim() + "\\" + txtName.Text.Trim() + ".bak'";
                     SqlCommand Cmd = new SqlCommand(strBacl, con);

@@ -17,4 +17,5 @@ namespace SupermarketManage
             return conn;
         }
     }
+
 }

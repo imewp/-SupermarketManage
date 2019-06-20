@@ -206,7 +206,7 @@
             // 
             this.数据备份ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("数据备份ToolStripMenuItem.Image")));
             this.数据备份ToolStripMenuItem.Name = "数据备份ToolStripMenuItem";
-            this.数据备份ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.数据备份ToolStripMenuItem.Size = new System.Drawing.Size(164, 30);
             this.数据备份ToolStripMenuItem.Text = "数据备份";
             this.数据备份ToolStripMenuItem.Click += new System.EventHandler(this.数据备份ToolStripMenuItem_Click);
             // 
@@ -214,7 +214,7 @@
             // 
             this.数据还原ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("数据还原ToolStripMenuItem.Image")));
             this.数据还原ToolStripMenuItem.Name = "数据还原ToolStripMenuItem";
-            this.数据还原ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.数据还原ToolStripMenuItem.Size = new System.Drawing.Size(164, 30);
             this.数据还原ToolStripMenuItem.Text = "数据还原";
             this.数据还原ToolStripMenuItem.Click += new System.EventHandler(this.数据还原ToolStripMenuItem_Click);
             // 
@@ -232,28 +232,28 @@
             // 主题一ToolStripMenuItem
             // 
             this.主题一ToolStripMenuItem.Name = "主题一ToolStripMenuItem";
-            this.主题一ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.主题一ToolStripMenuItem.Size = new System.Drawing.Size(146, 30);
             this.主题一ToolStripMenuItem.Text = "主题一";
             this.主题一ToolStripMenuItem.Click += new System.EventHandler(this.主题一ToolStripMenuItem_Click);
             // 
             // 主题二ToolStripMenuItem
             // 
             this.主题二ToolStripMenuItem.Name = "主题二ToolStripMenuItem";
-            this.主题二ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.主题二ToolStripMenuItem.Size = new System.Drawing.Size(146, 30);
             this.主题二ToolStripMenuItem.Text = "主题二";
             this.主题二ToolStripMenuItem.Click += new System.EventHandler(this.主题二ToolStripMenuItem_Click);
             // 
             // 主题三ToolStripMenuItem
             // 
             this.主题三ToolStripMenuItem.Name = "主题三ToolStripMenuItem";
-            this.主题三ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.主题三ToolStripMenuItem.Size = new System.Drawing.Size(146, 30);
             this.主题三ToolStripMenuItem.Text = "主题三";
             this.主题三ToolStripMenuItem.Click += new System.EventHandler(this.主题三ToolStripMenuItem_Click);
             // 
             // 主题四ToolStripMenuItem
             // 
             this.主题四ToolStripMenuItem.Name = "主题四ToolStripMenuItem";
-            this.主题四ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.主题四ToolStripMenuItem.Size = new System.Drawing.Size(146, 30);
             this.主题四ToolStripMenuItem.Text = "主题四";
             this.主题四ToolStripMenuItem.Click += new System.EventHandler(this.主题四ToolStripMenuItem_Click);
             // 
@@ -272,7 +272,7 @@
             // 
             this.登录ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("登录ToolStripMenuItem.Image")));
             this.登录ToolStripMenuItem.Name = "登录ToolStripMenuItem";
-            this.登录ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.登录ToolStripMenuItem.Size = new System.Drawing.Size(146, 30);
             this.登录ToolStripMenuItem.Text = "百度";
             this.登录ToolStripMenuItem.Click += new System.EventHandler(this.登录ToolStripMenuItem_Click);
             // 
@@ -280,7 +280,7 @@
             // 
             this.启动WordToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("启动WordToolStripMenuItem.Image")));
             this.启动WordToolStripMenuItem.Name = "启动WordToolStripMenuItem";
-            this.启动WordToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.启动WordToolStripMenuItem.Size = new System.Drawing.Size(146, 30);
             this.启动WordToolStripMenuItem.Text = "Word";
             this.启动WordToolStripMenuItem.Click += new System.EventHandler(this.启动WordToolStripMenuItem_Click);
             // 
@@ -288,7 +288,7 @@
             // 
             this.启动ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("启动ToolStripMenuItem.Image")));
             this.启动ToolStripMenuItem.Name = "启动ToolStripMenuItem";
-            this.启动ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.启动ToolStripMenuItem.Size = new System.Drawing.Size(146, 30);
             this.启动ToolStripMenuItem.Text = "Excel";
             this.启动ToolStripMenuItem.Click += new System.EventHandler(this.启动ToolStripMenuItem_Click);
             // 
@@ -296,7 +296,7 @@
             // 
             this.计算器ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("计算器ToolStripMenuItem.Image")));
             this.计算器ToolStripMenuItem.Name = "计算器ToolStripMenuItem";
-            this.计算器ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.计算器ToolStripMenuItem.Size = new System.Drawing.Size(146, 30);
             this.计算器ToolStripMenuItem.Text = "计算器";
             this.计算器ToolStripMenuItem.Click += new System.EventHandler(this.计算器ToolStripMenuItem_Click);
             // 
@@ -312,7 +312,7 @@
             // 
             this.直接退出ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("直接退出ToolStripMenuItem.Image")));
             this.直接退出ToolStripMenuItem.Name = "直接退出ToolStripMenuItem";
-            this.直接退出ToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.直接退出ToolStripMenuItem.Size = new System.Drawing.Size(164, 30);
             this.直接退出ToolStripMenuItem.Text = "直接退出";
             this.直接退出ToolStripMenuItem.Click += new System.EventHandler(this.直接退出ToolStripMenuItem_Click);
             // 
@@ -429,7 +429,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1444, 838);
             this.Controls.Add(this.tsSupermarket);
             this.Controls.Add(this.statusStrip1);

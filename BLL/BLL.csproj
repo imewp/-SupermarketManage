@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompanyInfo.cs" />
+    <Compile Include="DataConn.cs" />
     <Compile Include="EmployeeInfo.cs" />
     <Compile Include="JHGoodsInfo.cs" />
     <Compile Include="KCInfo.cs" />

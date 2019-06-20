@@ -49,7 +49,7 @@
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(456, 192);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(160, 34);
             this.btnExit.TabIndex = 92;
@@ -60,11 +60,12 @@
             // txtAlarmNum
             // 
             this.txtAlarmNum.Location = new System.Drawing.Point(510, 140);
-            this.txtAlarmNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAlarmNum.Margin = new System.Windows.Forms.Padding(4);
             this.txtAlarmNum.MaxLength = 10;
             this.txtAlarmNum.Name = "txtAlarmNum";
             this.txtAlarmNum.Size = new System.Drawing.Size(229, 28);
             this.txtAlarmNum.TabIndex = 91;
+            this.txtAlarmNum.Text = "0";
             // 
             // lblAlarm
             // 
@@ -80,7 +81,7 @@
             // 
             this.txtid.Enabled = false;
             this.txtid.Location = new System.Drawing.Point(144, 18);
-            this.txtid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtid.Margin = new System.Windows.Forms.Padding(4);
             this.txtid.MaxLength = 20;
             this.txtid.Name = "txtid";
             this.txtid.ReadOnly = true;
@@ -101,7 +102,7 @@
             // 
             this.txtDepotName.Enabled = false;
             this.txtDepotName.Location = new System.Drawing.Point(510, 80);
-            this.txtDepotName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDepotName.Margin = new System.Windows.Forms.Padding(4);
             this.txtDepotName.MaxLength = 10;
             this.txtDepotName.Name = "txtDepotName";
             this.txtDepotName.ReadOnly = true;
@@ -112,7 +113,7 @@
             // 
             this.txtGoodsNum.Enabled = false;
             this.txtGoodsNum.Location = new System.Drawing.Point(144, 140);
-            this.txtGoodsNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGoodsNum.Margin = new System.Windows.Forms.Padding(4);
             this.txtGoodsNum.MaxLength = 10;
             this.txtGoodsNum.Name = "txtGoodsNum";
             this.txtGoodsNum.ReadOnly = true;
@@ -123,7 +124,7 @@
             // 
             this.txtGoodsName.Enabled = false;
             this.txtGoodsName.Location = new System.Drawing.Point(510, 18);
-            this.txtGoodsName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGoodsName.Margin = new System.Windows.Forms.Padding(4);
             this.txtGoodsName.MaxLength = 20;
             this.txtGoodsName.Name = "txtGoodsName";
             this.txtGoodsName.ReadOnly = true;
@@ -134,7 +135,7 @@
             // 
             this.txtCompanyName.Enabled = false;
             this.txtCompanyName.Location = new System.Drawing.Point(144, 80);
-            this.txtCompanyName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCompanyName.Margin = new System.Windows.Forms.Padding(4);
             this.txtCompanyName.MaxLength = 10;
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.ReadOnly = true;
@@ -185,7 +186,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(22, 256);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
@@ -196,7 +197,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(203, 192);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(160, 34);
             this.btnAdd.TabIndex = 78;
@@ -224,7 +225,7 @@
             this.Controls.Add(this.lblCompanyName);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnAdd);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "KCAlarmNum";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "库存报警";

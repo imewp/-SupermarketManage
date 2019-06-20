@@ -7,10 +7,16 @@ using System.Text;
 
 namespace DAL
 {
-    class DBHelper
+    public partial class DBHelper
     {
         static string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
 
+        static  public SqlConnection GetCon()
+        {
+            SqlConnection conn = new SqlConnection(connStr);
+            conn.Open();
+            return conn;
+        }
         static void PrepareCommand(SqlConnection conn, SqlCommand comm, string comText, CommandType comType, SqlParameter[] cmdParms)
         {
             if (conn.State != ConnectionState.Open)

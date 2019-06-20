@@ -45,6 +45,11 @@ namespace SupermarketManage
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (txtAlarmNum.Text == "" || txtGoodsNum.Text == "" || txtid.Text == "" || txtGoodsName.Text == "" || txtDepotName.Text == "" || txtCompanyName.Text == "")
+            {
+                MessageBox.Show("请将信息添加完整！");
+                return;
+            }
             Model.KCInfo model = new Model.KCInfo();
             model.GoodsID = txtid.Text.Trim();
             model.GoodsName = txtGoodsName.Text.Trim();

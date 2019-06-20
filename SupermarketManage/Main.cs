@@ -39,6 +39,7 @@ namespace SupermarketManage
             timer1.Enabled = true;
             //选择皮肤文件
             skin.SkinFile = System.Environment.CurrentDirectory + "\\Skins\\" + "DiamondBlue.ssk";
+            this.statuslblUser.Text="当前用户类型："+type;
             if (type == "员工")
             {
                 基本档案ToolStripMenuItem.Visible = false;
