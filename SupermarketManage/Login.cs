@@ -28,7 +28,8 @@ namespace SupermarketManage
             if (ds.Tables[0].Rows.Count > 0)
             {
                 Main main = new Main();
-                main.Show();
+                main.Type = ds.Tables[0].Rows[0]["用户类别"].ToString();
+                main.Show();    
                 this.Hide();
             }
             else

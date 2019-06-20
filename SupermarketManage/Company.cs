@@ -107,6 +107,7 @@ namespace SupermarketManage
                         {
                             DataBind();//窗体登录时绑定数据到DataGridView
                             ControlStatus();
+                            ClearControls();
                         }
                     } break;
                 case 2:
@@ -115,6 +116,7 @@ namespace SupermarketManage
                         {
                             DataBind();//窗体登录时绑定数据到DataGridView
                             ControlStatus();
+                            ClearControls();
                         }
                     } break;
                 case 3:
@@ -123,6 +125,7 @@ namespace SupermarketManage
                         {
                             DataBind();//窗体登录时绑定数据到DataGridView
                             ControlStatus();
+                            ClearControls();
                         }
                     } break;
             }
@@ -167,12 +170,12 @@ namespace SupermarketManage
             {
                 case "供应商名称":
                     {
-                        strWhere = strWhere + " and CompanyName like '%" + companyName + "'%";
+                        strWhere = strWhere + " and CompanyName like '%" + companyName + "%'";
                     }
                     break;
                 case "负责人姓名":
                     {
-                        strWhere = strWhere + " and CompanyDirector like '%" + companyDirector + "'%";
+                        strWhere = strWhere + " and CompanyDirector like '%" + companyDirector + "%'";
                     }
                     break;
             }

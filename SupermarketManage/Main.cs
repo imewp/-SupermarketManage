@@ -15,6 +15,12 @@ namespace SupermarketManage
         {
             InitializeComponent();
         }
+        string type;    //用户类型
+        public string Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
         //定义新皮肤
         Sunisoft.IrisSkin.SkinEngine skin = new Sunisoft.IrisSkin.SkinEngine();
 
@@ -33,6 +39,11 @@ namespace SupermarketManage
             timer1.Enabled = true;
             //选择皮肤文件
             skin.SkinFile = System.Environment.CurrentDirectory + "\\Skins\\" + "DiamondBlue.ssk";
+            if (type == "员工")
+            {
+                基本档案ToolStripMenuItem.Visible = false;
+                tsbtnCheckIn.Visible = false;
+            }
         }
 
         private void 启动WordToolStripMenuItem_Click(object sender, EventArgs e)
